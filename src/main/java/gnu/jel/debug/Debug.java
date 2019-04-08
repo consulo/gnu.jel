@@ -43,7 +43,7 @@ public final class Debug {
   /**
    * Determines if debugging is enabled in current compilation.
    */
-  public final static boolean enabled=@DEBUG@; // <-- AUTO GENERATED
+  public final static boolean enabled = Boolean.getBoolean("gnu.jel.debug");
   
 
   /**

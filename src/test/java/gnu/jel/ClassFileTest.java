@@ -18,9 +18,9 @@
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package gnu.jel;
-import junit.framework.TestCase;
-import java.io.StringReader;
 import java.lang.reflect.Method;
+
+import junit.framework.TestCase;
 
 public class ClassFileTest extends TestCase {
   public ClassFileTest(String name) {

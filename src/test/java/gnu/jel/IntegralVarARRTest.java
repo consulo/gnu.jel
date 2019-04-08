@@ -20,9 +20,7 @@
 
 package gnu.jel;
 
-import gnu.jel.tests.*;
-import java.io.PrintStream;
-import java.util.Stack;
+import gnu.jel.tests.VariableProvider;
 
 public class IntegralVarARRTest extends TestingUtils {
   public IntegralVarARRTest(String name) {

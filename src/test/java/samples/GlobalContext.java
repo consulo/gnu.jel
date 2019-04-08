@@ -17,19 +17,17 @@
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+package samples;
 
-public class Data implements gnu.jel.reflect.Double {
-    public double value=10.0;
-    public double squared_value() {
-	return value*value;
-    };
+public class GlobalContext {
+    public double x;
+    
+    public Data d1;
+    public Data d2;
 
-    public Data(double value) {
-	this.value=value;
-    };
-
-    // implements gnu.jel.reflect.Double interface
-    public double getValue() {
-	return value;
+    public  GlobalContext(double x, Data d1, Data d2) {
+	this.x=x;
+	this.d1=d1;
+	this.d2=d2;
     };
 };

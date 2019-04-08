@@ -17,6 +17,7 @@
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+package samples;
 
 public class YourTestBed {
     public static void main(String[] args) throws Throwable {
@@ -31,9 +32,9 @@ public class YourTestBed {
 	// we shall enable access to methods of two classes
 	Class[] dynLib=new Class<?>[2];
 	// we export global context fields/methods
-	dynLib[0]=GlobalContext.class;
+	dynLib[0]= GlobalContext.class;
 	// we export YYY getXXXProperty() methods for dynamic variable access
-	dynLib[1]=DVResolverProvider.class;
+	dynLib[1]= DVResolverProvider.class;
 
 	// this initializes the resolver object
 	DVResolverProvider resolver=new DVResolverProvider();

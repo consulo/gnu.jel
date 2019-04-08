@@ -19,11 +19,12 @@
 */
 package gnu.jel;
 
-import junit.framework.TestCase;
 import java.io.PrintStream;
 import java.util.Stack;
 
-public class TestingUtils extends TestCase {
+import junit.framework.TestCase;
+
+public abstract class TestingUtils extends TestCase {
   public TestingUtils(String name) {
     super(name);
   }

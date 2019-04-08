@@ -20,9 +20,13 @@
 
 package gnu.jel;
 
-import java.util.*;
-import java.io.*;
 import gnu.jel.debug.Debug;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.Hashtable;
+import java.util.ResourceBundle;
 
 public class TableWriter {
   private static final Hashtable<String,Object> tables = 
@@ -309,7 +313,7 @@ public class TableWriter {
 
         //  --------- WRITING CODE
         ObjectOutputStream oos=
-          new ObjectOutputStream(new FileOutputStream("gnu/jel/tables.dat"));
+          new ObjectOutputStream(new FileOutputStream(new File("tables.dat")));
         
         oos.writeObject(tables);
       } catch(Exception exc) {

@@ -17,6 +17,7 @@
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+package samples;
 
 // This class is both used to resolve the dynamic variable names and
 // to provide their values. These two functions can also be

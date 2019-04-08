@@ -18,6 +18,8 @@
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+package samples;
+
 public class Data implements gnu.jel.reflect.Double {
     public double value=10.0;
     public double squared_value() {

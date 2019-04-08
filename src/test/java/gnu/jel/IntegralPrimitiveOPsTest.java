@@ -20,9 +20,9 @@
 
 package gnu.jel;
 
-import gnu.jel.tests.*;
-import java.io.PrintStream;
-import java.util.Stack;
+import gnu.jel.tests.DoubleObject;
+import gnu.jel.tests.IntegerObject;
+import gnu.jel.tests.VariableProvider;
 
 public class IntegralPrimitiveOPsTest extends TestingUtils {
   public IntegralPrimitiveOPsTest(String name) {

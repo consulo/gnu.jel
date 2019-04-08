@@ -2,41 +2,73 @@
 <project>
   <component name="ChangeListManager">
     <list default="true" id="6196a7ee-4fac-4c05-8a94-f1ddde707378" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/Calculator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/DVResolverProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/Data.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/GlobalContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/YourTestBed.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/ClassFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/CompilationException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/CompiledExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/DVMap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/Evaluator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/ImageLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/IntegerStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/JEL.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/Library.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/LocalField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/LocalMethod.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OP.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OPbinary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OPcall.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OPcondtnl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OPload.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/OPunary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/Parser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/TableKeeper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/TableWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/debug/Debug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Boolean.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Byte.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Character.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Double.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Float.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Integer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Long.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/Short.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/java/gnu/jel/reflect/String.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/gnu/jel/tables.dat" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jel.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jel_g.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jel_jdk5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/calculator/Calculator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/calculator/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/testsuite/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/testsuite/tests.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/CODEGEN_HOW_TO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/README.calculator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/README.testbed" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/README.testsuite" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/RELNOTES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/html/EC.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/html/manual.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/src/docs/manual.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/third-party/junit.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Calculator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/DVResolverProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Data.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/GlobalContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/YourTestBed.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.consulo/modules.xml" afterPath="$PROJECT_DIR$/.consulo/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.consulo/workspace.xml" afterPath="$PROJECT_DIR$/.consulo/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gnu/jel/TableWriter.java" afterPath="$PROJECT_DIR$/src/main/java/gnu/jel/TableWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gnu/jel/debug/Debug.java" afterPath="$PROJECT_DIR$/src/main/java/gnu/jel/debug/Debug.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/samples/calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/test/java/samples/Calculator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/samples/testbed/DVResolverProvider.java" afterPath="$PROJECT_DIR$/src/test/java/samples/DVResolverProvider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/samples/testbed/Data.java" afterPath="$PROJECT_DIR$/src/test/java/samples/Data.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/samples/testbed/GlobalContext.java" afterPath="$PROJECT_DIR$/src/test/java/samples/GlobalContext.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/samples/testbed/YourTestBed.java" afterPath="$PROJECT_DIR$/src/test/java/samples/YourTestBed.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/ClassFileExprTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/ClassFileExprTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/ClassFileTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/ClassFileTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegerStackTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegerStackTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralBoxUnboxTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralBoxUnboxTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralDotOperatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralDotOperatorTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralDowncastingTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralDowncastingTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralDynamicVariablesTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralDynamicVariablesTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralErrorTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralErrorTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralExceptionsPassingTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralExceptionsPassingTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralPrimitiveOPsTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralPrimitiveOPsTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralReferencesWideningTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralReferencesWideningTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralStaticTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralStaticTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralVarARRTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralVarARRTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralVarargsTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralVarargsTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/IntegralVirtualTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/IntegralVirtualTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/JELTestSuite.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/JELTestSuite.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/LibraryDotOPTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/LibraryDotOPTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/LibraryTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/LibraryTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/ParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/ParserTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/TestingUtils.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/TestingUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/BooleanObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/BooleanObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/ByteObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/ByteObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/CharacterObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/CharacterObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/DoubleObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/DoubleObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/FloatObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/FloatObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/IntegerObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/IntegerObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/LongObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/LongObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/ShortObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/ShortObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/StringObject.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/StringObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/src/tests/gnu/jel/tests/VariableProvider.java" afterPath="$PROJECT_DIR$/src/test/java/gnu/jel/tests/VariableProvider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/gnu/jel/JEL.properties" afterPath="$PROJECT_DIR$/src/main/resources/gnu/jel/JEL.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,31 +81,459 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="EditorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/samples/calculator/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state relative-caret-position="-768">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/testbed/DVResolverProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/testbed/GlobalContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/testbed/YourTestBed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="128" column="23" lean-forward="false" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/samples/YourTestBed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
-            <marker date="1554703141724" expanded="true" signature="89:1405" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="410:656" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="431:633" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="527:611" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="666:1394" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="678:1384" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="690:1061" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="836:1048" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="1073:1371" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="1214:1358" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="1231:1340" placeholder="..." />
-            <marker date="1554703141724" expanded="true" signature="1275:1322" placeholder="..." />
+            <marker date="1554703312380" expanded="true" signature="0:950" placeholder="/.../" />
+            <marker date="1554703312380" expanded="true" signature="1056:4618" placeholder="{...}" />
+            <marker date="1554703312380" expanded="true" signature="1060:1240" placeholder="//..." />
+            <marker date="1554703312380" expanded="true" signature="1980:2102" placeholder="//..." />
+            <marker date="1554703312380" expanded="true" signature="2293:2415" placeholder="//..." />
+            <marker date="1554703312380" expanded="true" signature="3316:3463" placeholder="//..." />
+            <marker date="1554703312380" expanded="true" signature="3788:3879" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/samples/GlobalContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1554703312401" expanded="true" signature="0:950" placeholder="/.../" />
+            <marker date="1554703312401" expanded="true" signature="1119:1163" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/samples/DVResolverProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <marker date="1554703312395" expanded="true" signature="0:950" placeholder="/.../" />
+            <marker date="1554703312395" expanded="true" signature="969:1138" placeholder="//..." />
+            <marker date="1554703312395" expanded="false" signature="1275:1290" placeholder="&lt;~&gt;" />
+            <marker date="1554703312395" expanded="true" signature="1379:1415" placeholder="{...}" />
+            <marker date="1554703312395" expanded="true" signature="1593:1863" placeholder="{...}" />
+            <marker date="1554703312395" expanded="true" signature="1874:1961" placeholder="//..." />
+            <marker date="1554703312395" expanded="true" signature="2008:2051" placeholder="{...}" />
+            <marker date="1554703312395" expanded="true" signature="2103:2148" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/samples/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <marker date="1554703312414" expanded="true" signature="0:950" placeholder="/.../" />
+            <marker date="1554703312414" expanded="true" signature="1088:1116" placeholder="{...}" />
+            <marker date="1554703312414" expanded="true" signature="1149:1175" placeholder="{...}" />
+            <marker date="1554703312414" expanded="true" signature="1258:1280" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/samples/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <marker date="1554703312388" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703312388" expanded="false" signature="977:1091" placeholder="..." />
+            <marker date="1554703312388" expanded="true" signature="2460:4151" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/manual.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/README.calculator">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/README.testbed">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/README.testsuite">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/src/docs/RELNOTES">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/reflect/Boolean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="true" signature="978:1070" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/reflect/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="true" signature="978:1067" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/IntegerStackTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="false" signature="975:1062" placeholder="..." />
+            <marker date="1462802421000" expanded="true" signature="1152:1174" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="1215:1220" placeholder="{}" />
+            <marker date="1462802421000" expanded="true" signature="1264:1269" placeholder="{}" />
+            <marker date="1462802421000" expanded="true" signature="1314:1399" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="1446:1572" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="1620:1905" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="1952:2515" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2228:2257" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/IntegralVarARRTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <marker date="1554703419442" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703419442" expanded="true" signature="1106:1128" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="1224:1670" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="1713:1793" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="1834:1916" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="1957:2050" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="2091:2211" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="2252:2376" placeholder="{...}" />
+            <marker date="1554703419442" expanded="true" signature="2417:2505" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/IntegralDowncastingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="false" signature="977:1045" placeholder="..." />
+            <marker date="1462802421000" expanded="true" signature="1153:1175" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="1365:2658" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2704:2820" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2860:2977" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="3017:3461" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="3502:4985" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="5026:5531" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="5573:5678" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="5719:5820" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="5861:5975" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="6016:6133" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="6175:6291" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="6333:6441" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="6483:6597" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/IntegralPrimitiveOPsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="56" column="88" lean-forward="true" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
+          <folding>
+            <marker date="1554703439943" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703439943" expanded="false" signature="977:1079" placeholder="..." />
+            <marker date="1554703439943" expanded="true" signature="1189:1211" placeholder="{...}" />
+            <marker date="1554703439943" expanded="true" signature="1403:2696" placeholder="{...}" />
+            <marker date="1554703439943" expanded="true" signature="2742:4693" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/TestingUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <marker date="1554703492714" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703492714" expanded="false" signature="976:1054" placeholder="..." />
+            <marker date="1554703492714" expanded="true" signature="1145:1167" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="1325:1986" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="2839:5653" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="3563:3627" placeholder="//..." />
+            <marker date="1554703492714" expanded="true" signature="4656:4777" placeholder="//..." />
+            <marker date="1554703492714" expanded="true" signature="5895:9328" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="6895:7075" placeholder="//..." />
+            <marker date="1554703492714" expanded="true" signature="7592:7711" placeholder="//..." />
+            <marker date="1554703492714" expanded="true" signature="9369:11047" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="11455:13777" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="12374:12440" placeholder="//..." />
+            <marker date="1554703492714" expanded="true" signature="14191:16843" placeholder="{...}" />
+            <marker date="1554703492714" expanded="true" signature="15308:15376" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/debug/Debug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="45" column="76" lean-forward="false" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
+          <folding>
+            <marker date="1554703574082" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703574082" expanded="true" signature="976:1701" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="1732:1805" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="1889:2050" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="2102:2204" placeholder="{...}" />
+            <marker date="1554703574082" expanded="true" signature="2209:2480" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="2549:2757" placeholder="{...}" />
+            <marker date="1554703574082" expanded="true" signature="2762:2972" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="3025:3164" placeholder="{...}" />
+            <marker date="1554703574082" expanded="true" signature="3169:3339" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="3411:3568" placeholder="{...}" />
+            <marker date="1554703574082" expanded="true" signature="3573:3692" placeholder="/**...*/" />
+            <marker date="1554703574082" expanded="true" signature="3749:3871" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/TableWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="468">
+          <caret line="302" column="63" lean-forward="false" selection-start-line="302" selection-start-column="63" selection-end-line="302" selection-end-column="63" />
+          <folding>
+            <marker date="1554703618722" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703618722" expanded="false" signature="977:1148" placeholder="..." />
+            <marker date="1554703618722" expanded="false" signature="1252:1267" placeholder="&lt;~&gt;" />
+            <marker date="1554703618722" expanded="true" signature="1364:18666" placeholder="{...}" />
+            <marker date="1554703618722" expanded="true" signature="4531:4914" placeholder="//..." />
+            <marker date="1554703618722" expanded="true" signature="5882:6570" placeholder="//..." />
+            <marker date="1554703618722" expanded="true" signature="13234:13325" placeholder="//..." />
+            <marker date="1554703618722" expanded="true" signature="14111:14318" placeholder="//..." />
+            <marker date="1554703618722" expanded="true" signature="17468:17776" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/gnu/jel/ClassFileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <marker date="1554703697208" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1554703697208" expanded="false" signature="975:1034" placeholder="..." />
+            <marker date="1554703697208" expanded="true" signature="1118:1140" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="1198:1413" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="1457:1462" placeholder="{}" />
+            <marker date="1554703697208" expanded="true" signature="1510:1619" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="1667:1765" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="1811:1915" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="1964:2070" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="2120:2226" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="2273:2565" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="2612:2712" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="2759:3018" placeholder="{...}" />
+            <marker date="1554703697208" expanded="true" signature="3082:3218" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/ClassFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="439" column="42" lean-forward="false" selection-start-line="439" selection-start-column="42" selection-end-line="439" selection-end-column="42" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="false" signature="977:1307" placeholder="..." />
+            <marker date="1462802421000" expanded="true" signature="1309:1367" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="false" signature="1964:1980" placeholder="&lt;~&gt;" />
+            <marker date="1462802421000" expanded="false" signature="2035:2051" placeholder="&lt;~&gt;" />
+            <marker date="1462802421000" expanded="true" signature="2255:2510" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2555:2618" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2659:2784" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="2876:3047" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="3051:3702" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="3828:6209" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="4733:4860" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="6214:6587" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="6615:7587" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="7653:7788" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="7842:10279" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="8998:9164" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="10312:10819" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="10824:10901" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="11017:11141" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="11169:11855" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="12250:12792" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="12829:13202" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="13207:13263" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="13321:13600" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="13661:15314" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="15400:15484" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="15564:16749" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="16544:16647" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="16949:17004" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="17077:17201" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="17205:17442" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="17477:23959" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="17957:18020" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="18203:18325" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="18388:18560" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="18873:18964" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="19018:19144" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="20213:20306" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="21656:21818" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="23966:24417" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="24421:24620" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="24676:27813" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="26755:26950" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="27818:28001" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="28005:28268" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="28299:28739" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="28919:29124" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="29129:29334" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="29377:29422" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="29427:29704" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="29751:32696" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="32902:33914" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="32988:33083" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="33407:33508" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="33920:34124" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/TableKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="77" column="6" lean-forward="false" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+          <folding>
+            <marker date="1462802421000" expanded="false" signature="0:950" placeholder="/.../" />
+            <marker date="1462802421000" expanded="false" signature="977:1035" placeholder="..." />
+            <marker date="1462802421000" expanded="true" signature="1174:3167" placeholder="{...}" />
+            <marker date="1462802421000" expanded="false" signature="1223:1238" placeholder="&lt;~&gt;" />
+            <marker date="1462802421000" expanded="false" signature="1578:1608" placeholder="/unchecked/" />
+            <marker date="1462802421000" expanded="true" signature="1718:1855" placeholder="//..." />
+            <marker date="1462802421000" expanded="true" signature="3172:3274" placeholder="/**...*/" />
+            <marker date="1462802421000" expanded="true" signature="3320:3354" placeholder="{...}" />
+            <marker date="1462802421000" expanded="true" signature="3413:3494" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RELNOTES">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -90,17 +550,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TableWriter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gnu/jel/TableWriter.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="-296">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tables.dat</find>
+    </findStrings>
+    <dirStrings>
+      <dir>W:\_github.com\consulo\jel</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,6 +582,15 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/test/java/samples/YourTestBed.java" />
+        <option value="$PROJECT_DIR$/src/test/java/samples/GlobalContext.java" />
+        <option value="$PROJECT_DIR$/src/test/java/samples/DVResolverProvider.java" />
+        <option value="$PROJECT_DIR$/src/test/java/samples/Data.java" />
+        <option value="$PROJECT_DIR$/src/test/java/samples/Calculator.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/test/java/gnu/jel/TestingUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gnu/jel/debug/Debug.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gnu/jel/TableWriter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -209,6 +686,30 @@
               <item name="gnu" type="462c0819:PsiDirectoryNode" />
               <item name="jel" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gnu.jel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gnu.jel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="gnu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gnu.jel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="gnu" type="462c0819:PsiDirectoryNode" />
+              <item name="jel" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -224,6 +725,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -231,6 +733,12 @@
     <option name="SHOW_PROPERTIES" value="true" />
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="W:\_github.com\consulo\jel\src\main\resources\gnu\jel" />
+      <recent name="W:\_github.com\consulo\jel\src\test\java" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -244,7 +752,76 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ClassFileTest.testAdd2UTF">
+    <configuration default="false" name="TableWriter" type="JavaApplication" factoryName="Java Application" temporary="true" nameIsGenerated="true">
+      <module name="gnu.jel" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="gnu.jel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="gnu.jel.TableWriter" />
+      <option name="VM_PARAMETERS" value="-Dgnu.jel.debug=true" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="INCLUDE_PROVIDED_SCOPE" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <envs />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ClassFileTest.testAdd2UTF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gnu.jel" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="gnu.jel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="gnu.jel" />
+      <option name="MAIN_CLASS_NAME" value="gnu.jel.ClassFileTest" />
+      <option name="METHOD_NAME" value="testAdd2UTF" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <ConfigurationWrapper RunnerId="JUnitDebug" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#DotNetConfigurationType" factoryName=".NET Application">
+      <module name="" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="name" value="Unnamed" />
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <option name="workingDirectory" value="" />
+      <coverage enabled="false" sample_coverage="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#NUnitConfigurationType" factoryName="NUnit">
+      <module name="" />
+      <coverage enabled="false" sample_coverage="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Consulo In Sandbox">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
@@ -263,6 +840,14 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="SHELL_PARAMETERS" value="" />
+      <option name="RUN_PAGE" value="" />
+      <option name="CUSTOM_WEB_XML" />
+      <module name="" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -286,6 +871,11 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaApplication" factoryName="Java Application">
       <module name="" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -302,6 +892,38 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Java Application.TableWriter" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ClassFileTest.testAdd2UTF" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ClassFileTest.testAdd2UTF" />
+        <item index="1" class="java.lang.String" itemvalue="Java Application.TableWriter" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Application" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -325,31 +947,39 @@
       <Port>5050</Port>
     </configuration>
   </component>
+  <component name="TestHistory">
+    <history-entry file="ClassFileTest_testAdd2UTF - 2019.04.08 at 09h 07m 46s.xml">
+      <configuration name="ClassFileTest.testAdd2UTF" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClassFileTest_testAdd2UTF - 2019.04.08 at 09h 08m 19s.xml">
+      <configuration name="ClassFileTest.testAdd2UTF" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1793" height="1093" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1793" height="1093" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24956772" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39937434" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
