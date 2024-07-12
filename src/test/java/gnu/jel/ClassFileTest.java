@@ -18,9 +18,9 @@
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package gnu.jel;
-import java.lang.reflect.Method;
-
 import junit.framework.TestCase;
+
+import java.lang.reflect.Method;
 
 public class ClassFileTest extends TestCase {
   public ClassFileTest(String name) {
@@ -34,7 +34,7 @@ public class ClassFileTest extends TestCase {
     //    private Object[] e;
     lf[0]=new LocalField(0x0002,(new Object[0]).getClass(),"e",null);
 
-	cf = new ClassFile(0x0001,"dump",(new Object()).getClass(),null,lf);
+	cf = new ClassFile(0x0001,"gnu/jel/dump",(new Object()).getClass(),null,lf);
   }
 
   public void tearDown() throws Exception {

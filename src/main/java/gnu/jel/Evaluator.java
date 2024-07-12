@@ -23,7 +23,6 @@ package gnu.jel;
 //import gnu.jel.generated.EC;
 //import gnu.jel.generated.CharStream;
 import gnu.jel.debug.Debug;
-import java.lang.reflect.Member;
 
 /**
  * This is the main frontend to JEL.
@@ -91,7 +90,7 @@ public class Evaluator {
       };
       
       Class<?> cmplExpr=Class.forName("gnu.jel.CompiledExpression");
-      ClassFile cf=new ClassFile(0x0001,"dump",cmplExpr,null,null);
+      ClassFile cf=new ClassFile(0x0001,"gnu/jel/dump",cmplExpr,null,null);
       // public 
       LocalMethod cnstr=
         new LocalMethod(0x0001,Void.TYPE,"<init>",null,null);
@@ -161,7 +160,7 @@ public class Evaluator {
         Debug.reportThrowable(exc);
       return null;
     }
-  };
+  }
   
   /**
    * Compiles expression, resolving the function names in the library.
@@ -207,7 +206,7 @@ public class Evaluator {
   public static CompiledExpression compile(String expression, Library lib)
     throws CompilationException {
     return compile(expression, lib, null);
-  };
+  }
 
   /**
    * Compiles expression, resolving the function names in the library.

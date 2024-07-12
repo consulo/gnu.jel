@@ -20,10 +20,10 @@
 
 package gnu.jel;
 import junit.framework.TestCase;
+
 import java.io.StringReader;
-import java.lang.reflect.Method;
-import java.lang.reflect.Member;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Member;
 import java.util.Stack;
 
 public class ClassFileExprTest extends TestCase {
@@ -75,7 +75,7 @@ public class ClassFileExprTest extends TestCase {
 
     // hand-compile a class template
     Class<?> cmplExpr=Class.forName("gnu.jel.CompiledExpression");
-    cf=new ClassFile(0x0001,"dump",cmplExpr,null,lf);
+    cf=new ClassFile(0x0001,"gnu/jel/dump",cmplExpr,null,lf);
     // public 
     LocalMethod cnstr=
       new LocalMethod(0x0001,Void.TYPE,"<init>",null,null);
