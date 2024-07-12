@@ -138,7 +138,7 @@ public class Parser {
     // initialize DV names accumulator
     if (lib.resolver!=null)
       accDV=new StringBuffer();
-  };
+  }
 
   //***********************
   //*** TOKENIZER methods
@@ -155,8 +155,8 @@ public class Parser {
       c=in.charAt(pos++);
     } catch (Exception e) {
       c=-1;
-    };
-    
+    }
+
     column++;
     
     if (prevLF)
@@ -188,9 +188,9 @@ public class Parser {
       break;
     default:
       break;
-    };
+    }
     return c;
-  };
+  }
 
   public void error(int code, Object param, int column) 
     throws CompilationException {
@@ -205,7 +205,7 @@ public class Parser {
     if ((cc<0) || (c!=cc))
       error(c==-1?1:3,new Character((char)c),column-(c==-1?1:0));
     read();
-  };
+  }
 
   public void nextToken() throws CompilationException {
     // store the column and line of the current token
@@ -301,7 +301,7 @@ public class Parser {
           parseReal();
         } else {
           type=40;
-        };
+        }
         return;  
       case '0': case '1': case '2': case '3': case '4':
       case '5': case '6': case '7': case '8': case '9':
@@ -327,7 +327,7 @@ public class Parser {
         } else consume(-1);
       }
     }
-  };
+  }
 
   // current char must be starting slash
   private int parseEscape() throws CompilationException {
@@ -356,8 +356,8 @@ public class Parser {
         } else {
           consume(-1);
           return -1; // never reached
-        };
-      };
+        }
+      }
       read(); // position to the next in stream
       return v; // character parsed
     }
@@ -374,8 +374,8 @@ public class Parser {
           } else {
             if (v>0xFF) consume(-1);
             return v;
-          };
-        };
+          }
+        }
         read();
         if (v>0xFF) consume(-1);
         return v;
@@ -386,7 +386,7 @@ public class Parser {
       }
     }
     } // case
-  };
+  }
 
   private void parseChar() throws CompilationException {
     char ch=0;
@@ -404,13 +404,13 @@ public class Parser {
     default:
       ch=(char)c;
       read();
-    };
+    }
     consume('\'');
     
     type=60; // <LITERAL>
     val=new Character(ch);
     return;
-  };
+  }
 
   private void parseString() throws CompilationException {
     if (Debug.enabled)
@@ -437,9 +437,9 @@ public class Parser {
       default:
         buf.append((char)c);
         read();
-      };
+      }
     }
-  };
+  }
 
   private void parseID() throws CompilationException {
     if (Debug.enabled)
@@ -461,10 +461,10 @@ public class Parser {
     } else if (val.equals("false")) {
       type=60; // <LITERAL>
       val=Boolean.FALSE;
-    };
+    }
 
     return;
-  };
+  }
 
   // starts to parse integer number, falls through to parseReal if '.' 
   // is encountered
@@ -505,15 +505,15 @@ public class Parser {
           if ((value>>>60)>0)
             error(30,null,column-1); // overflow
           value=(value<<4)+(c-'0');
-        };
-        break;
+        }
+          break;
       case 'D': case 'd': case 'E': case 'e': case 'F': case 'f':
         // in non-hexadecimal mode switch to parsing real number
         if (base!=16) {
           parseReal();
           return;
-        };
-      case 'A': case 'a': case 'B': case 'b': case 'C': case 'c':
+        }
+        case 'A': case 'a': case 'B': case 'b': case 'C': case 'c':
         if (base!=16)
           break outerLoop; // illegal character, error will appear later
         seenDigit=true;
@@ -561,9 +561,9 @@ public class Parser {
           val=new Integer((int)value); // to overflow to negative values
         else error(29,new Long(value),column-1); // int overflow
         break outerLoop;
-      };
-    };
-    
+      }
+    }
+
     // let's check what have we parsed
     if ((c == '.') || Character.isJavaIdentifierPart((char)c)) {
       consume(-1);   // immediately followed by letter, too bad
@@ -571,9 +571,9 @@ public class Parser {
       consume(-1);   // no '8', '9' in hexadecimal numbers
     } else if ((base==16) && !seenDigit) {
       consume(-1);   // hexadecimal with no digits inside
-    };
-  };
-  
+    }
+  }
+
   private void parseReal() throws CompilationException {
     boolean seenE = false;
     boolean makeFloat = false;
@@ -617,8 +617,8 @@ public class Parser {
       default:
         // anything unknown means end of number
         break outerLoop;
-      };
-    };
+      }
+    }
 
     // let's check what have we accumulated and make a token out of it
     if ((c == '.') || Character.isJavaIdentifierPart((char)c)) {
@@ -640,11 +640,11 @@ public class Parser {
           val=Double.valueOf(buf.toString());
           if (Double.isInfinite(((Double)val).doubleValue()))
             error(31,null,column-1); // floating point literal overflow
-        };
+        }
         buf.setLength(0); // if success -- reset buf
-      };
-    };
-  };
+      }
+    }
+  }
 
   // performs "cast" lookahead
   // returns true if the next sequence of tokens mathes:
@@ -677,8 +677,8 @@ public class Parser {
           case -1:  break outerLoop;
           case ' ': case '\t': case '\n': case '\r': read(); break;
           default:  break ws2;
-          };
-        
+          }
+
         if (!Character.isJavaIdentifierStart((char)c))
           break outerLoop;
 
@@ -693,7 +693,7 @@ public class Parser {
           case ' ': case '\t': case '\n': case '\r': read(); break;
           default:
             break ws3;
-          };
+          }
 
         switch(c) {
         case '.':
@@ -713,7 +713,7 @@ public class Parser {
         default:
           break outerLoop; // anything else -- bail
         }
-      }; // parenLoop
+      }// parenLoop
 
       read(); // skip ')' or '['
       // we now match beginning of '(', <ID>, '.', '\'', '\"', <NUMBER>
@@ -734,14 +734,14 @@ public class Parser {
           break outerLoop;
         }
 
-    }; // outerLoop
+    }// outerLoop
 
     // restore state
     prevCR=t_CR; prevLF=t_LF; c=t_c;
     column=t_column; line=t_line; pos=t_pos; 
 
     return result;
-  };
+  }
 
   //*** TOKENIZER methods
   //***********************
@@ -776,31 +776,31 @@ public class Parser {
           Debug.check(err_col>0);
         exc.col=err_col; // set if not
         //exc.line=err_line; // not yet
-      };
+      }
       //      exc.printStackTrace();
       throw exc;
-    };
-   
+    }
+
     if (Debug.enabled)
       Debug.check(paramOPs.size()==1,
                    "There must be only a single item left in paramOPs stack.");
     
     return paramOPs.pop();
-  };
-  
+  }
+
   private void consumeT(int t) throws CompilationException {
     if (type!=t)
       consume(-1); // encountered unexpected (FIXME: report as token)
     nextToken();
-  };
+  }
 
   private void expression() throws CompilationException {
     // expression ::= conditional <EOF>
     nextToken();
     conditional();
     consumeT(-1); // consume EOF
-  };
-  
+  }
+
   private void conditional() throws CompilationException {
     binOP(0);
     if (type==35) { // '?'
@@ -822,9 +822,9 @@ public class Parser {
                      (stackSizeAfterFirstBranch==stackSizeBeforeBranch+1),
                      "Stack in conditional branches is not balanced.");
       paramOPs.push(new OPcondtnl(paramOPs));
-    };
-  };
-  
+    }
+  }
+
   // this array defines binary operators precedence
   //    private final static byte[][] binR = {
   //      // min max
@@ -878,8 +878,8 @@ public class Parser {
       // make use that token types and binary OPs coincide
       paramOPs.push(new OPbinary(paramOPs,t));
 
-    };
-  };
+    }
+  }
 
   private void unary() throws CompilationException {
     int ecol;
@@ -904,7 +904,7 @@ public class Parser {
         nextToken();
         typeAccum.append(val);
         consumeT(50); // '<ID>'
-      };
+      }
       consumeT(42); // ')'
 
       element();
@@ -936,7 +936,7 @@ public class Parser {
       if (typeID==8) {
         // identify the type properly
         typeID=OP.typeID(clazz);
-      };
+      }
 
       typeAccum.setLength(accumStrt);
 
@@ -953,8 +953,8 @@ public class Parser {
         element();
       else
         consume(-1); // throw an error (FIXME: report as unexpected _token_)
-    };
-  };
+    }
+  }
 
   private void element() throws CompilationException {
     // deciding between <LITERAL>, '(' conditional ')', <ID> invocation
@@ -975,16 +975,16 @@ public class Parser {
       break;
     default:
       consume(-1); // throw an error (FIXME: report as unexpected _token_)
-    };
-    
+    }
+
     while (type==40) { // '.'
       nextToken();
       invocation(true);
-    };
+    }
 
     genDVCall(); // finish prepared DV call
     
-  };
+  }
 
   private void invocation(boolean afterDot) throws CompilationException {
     int paramsStart=0;
@@ -1004,14 +1004,14 @@ public class Parser {
         accDV.setLength(oldLen); // back up
         err_col=ecol;
         genDVCall(); // finish prepared DV call
-      };
-    }; // end if accDV!=null
+      }
+    }// end if accDV!=null
 
     if (!inDVmatch) {
       if (afterDot) resolveIn=paramOPs.peek().resType;
       // start prepating a call to an object's method x.image
       paramsStart=paramOPs.size();
-    };
+    }
 
     if (type==41) { // '('
       ecol=ct_column; // error will be reported against this '('
@@ -1024,7 +1024,7 @@ public class Parser {
 
         // this is the place to hack in the abort of match and check
         // if the last matched name can be called as a method
-      };
+      }
 
       nextToken();
 
@@ -1038,19 +1038,19 @@ public class Parser {
         while (type==43) { // ','
           nextToken();
           conditional();
-        };
-        
-      };
+        }
+
+      }
 
       consumeT(42); // ')'
-    };
-    
+    }
+
     if (!inDVmatch) {
       // generate the method invocation
       err_col=ecol_id;
       functionCall(resolveIn,(String)idImage,paramsStart);
-    };
-    
+    }
+
     while (type==19) { // '['
       ecol=ct_column; // error will be reported against this '['
       nextToken();
@@ -1061,8 +1061,8 @@ public class Parser {
       err_col=ecol;      
       paramOPs.push(new OPbinary(paramOPs,19));      
       
-    };
-  };
+    }
+  }
 
   // service methods not directly related to parser, but to
   // complex method calling semantics of JEL
@@ -1133,4 +1133,4 @@ public class Parser {
   //*** PARSER methods
   //***********************
 
-};
+}

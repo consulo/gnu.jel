@@ -25,14 +25,14 @@ public class BooleanObject implements gnu.jel.reflect.Boolean {
   
   public BooleanObject(boolean val) {
 	this.val=val;
-  };
+  }
 
   public boolean getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
-  
-};
+  }
+
+}

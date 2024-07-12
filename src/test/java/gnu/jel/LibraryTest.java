@@ -126,6 +126,6 @@ public class LibraryTest extends TestCase {
   public void testStateDep() throws Exception {
     ll.markStateDependent("random",null);
     assertTrue(!ll.isStateless(ll.getMember(null,"random",null)));
-  };
+  }
 
 }

@@ -25,18 +25,18 @@ public class IntegerObject implements gnu.jel.reflect.Integer {
   
   public IntegerObject(int val) {
 	this.val=val;
-  };
-  
+  }
+
   public int getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
   public String getStringProperty(String name) {
     return name;
-  };
+  }
 
-};
+}

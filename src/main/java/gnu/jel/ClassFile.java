@@ -68,14 +68,14 @@ public class ClassFile implements Cloneable {
       System.arraycopy(text, 0, new_text, 0, tsize-1);
       text=new_text;
       text[tsize-1]=(byte)b;
-    };
-  };
+    }
+  }
 
   // write short
   void writeShort(int v) {
     write((v >>> 8) & 0xFF);
     write( v        & 0xFF);
-  };
+  }
 
   // write int
   void writeInt(int v) {
@@ -83,8 +83,8 @@ public class ClassFile implements Cloneable {
     write((v >>> 16) & 0xFF);
     write((v >>>  8) & 0xFF);
     write( v         & 0xFF);
-  };
-  
+  }
+
 
   private boolean isInterface;
 
@@ -163,8 +163,8 @@ public class ClassFile implements Cloneable {
         if (Debug.enabled)
           Debug.check(interfaces[i].isInterface());
         writeShort(getIndex(interfaces[i],9));
-      };
-      
+      }
+
       // write out fields
       int nFields;
       if (fields==null) nFields=0; else nFields=fields.length;
@@ -180,13 +180,13 @@ public class ClassFile implements Cloneable {
         writeShort(getUTFIndex(cLF.getName()));
         writeShort(getUTFIndex(Library.getSignature(cLF.getType())));
         writeShort(0); // no attributes
-      };
+      }
       nMethodsPatch=tsize;
       writeShort(0); // methods count placeholder
     } catch (IOException exc) {
       // can't be
-    };
-  };
+    }
+  }
 
   /**
    * Makes a clone of this object.
@@ -227,10 +227,9 @@ public class ClassFile implements Cloneable {
     } catch (CloneNotSupportedException exc) {
       if (Debug.enabled)
         Debug.reportThrowable(exc);
-    };
+    }
     return res;
-  };
-
+  }
 
 
   private int startCodeAttr=0;
@@ -248,8 +247,8 @@ public class ClassFile implements Cloneable {
       for(int i=0;i<6;i++)
         Debug.check(cstk[i].size()==0);
       Debug.check(currJump==0);
-    };
-    
+    }
+
     // first finish the last method
     finishMethod();
     
@@ -281,8 +280,8 @@ public class ClassFile implements Cloneable {
       // TODO: could have checked that exceptions[i] is actually subclass of
       // java.lang.Exception.
       // May be better place for this check is gnu.jel.reflect...
-    };
-      
+    }
+
     // now we start writing the code attribute
     if (!isAbstract) {
       startCodeAttr=tsize;
@@ -306,20 +305,20 @@ public class ClassFile implements Cloneable {
         int j=i-this_num;
         paramsVars[i]=cW;
         noteStk(-1,i<this_num?8:OP.typeID(j<parlen?params[j]:vars[j-parlen]));
-      };
-      
+      }
+
       writeShort(cW);  // number of local vars
       cW=0;
       
       writeInt(0);      // code length, to be patched back
       startCode=tsize;
-    };
-    
+    }
+
     // Reset Java stack statistics
     mW=0;
       
     if (!isAbstract) currMethod=m;
-  };
+  }
 
   private void finishMethod() {
     if (currMethod!=null) { // finish the previous method
@@ -342,8 +341,8 @@ public class ClassFile implements Cloneable {
       tsize=currPos;
 
       currMethod=null;
-    };
-  };
+    }
+  }
 
   // adds one or more instructions to the code.
   //  public void asmOP(OP op);
@@ -377,10 +376,10 @@ public class ClassFile implements Cloneable {
       image.write(0); // no class file attributes      
     } catch (IOException exc) {
       // can't be
-    };
+    }
     return image.toByteArray();
-  };
-  
+  }
+
   //=========================================================
   //========== INSTRUCTIONS INTERFACE TO THE STATE===========
   //=========================================================
@@ -410,14 +409,14 @@ public class ClassFile implements Cloneable {
       
       if (Debug.enabled)
         Debug.check(cW>=0);
-    };
+    }
 
     if ((a>=0) && (a!=9)) {
       cW++;
       if ((a & (~2)) == 5) cW++; // Note additional word for J and D
       if (cW>mW) mW=cW;
-    };
-  };
+    }
+  }
 
   /**
    * classes frequently used in generated code
@@ -432,7 +431,7 @@ public class ClassFile implements Cloneable {
 
     specialClasses=(Class[])TableKeeper.getTable("specialClasses");
 
-  };
+  }
 
   private static final Member[] specialMethods;
 
@@ -455,8 +454,8 @@ public class ClassFile implements Cloneable {
           params=new Class<?>[specialMds[i].length-2];
           for(int j=0;j<params.length;j++) {
             params[j]=specialClasses[specialMds[i][2+j]];
-          };
-              
+          }
+
           switch (specialMds[i][0]/100) {
           case 0: // usual method
             specialMethods[i]=definingClass.getMethod(name,params);
@@ -472,9 +471,9 @@ public class ClassFile implements Cloneable {
           default:
             if (Debug.enabled)
               throw new Exception("JEL: Wrong class ID modifier.");
-          };
-        };
-        
+          }
+        }
+
       } catch (Exception exc) {
         if (Debug.enabled) {
           Debug.println("JEL: Problem with special method ["+i+"] "+
@@ -482,18 +481,18 @@ public class ClassFile implements Cloneable {
           for(int j=0;j<params.length;j++)
             Debug.println("parameter["+j+"]="+params[j]);
           Debug.reportThrowable(exc);
-        };
-      };
-    };
-  };
+        }
+      }
+    }
+  }
 
   // code up to 8 operations without extensions
   public final void codeB(long op) {
     while (op!=0) {
       write((byte)(op & 0xFFL));
       op=op >>> 8;
-    };
-  };
+    }
+  }
 
   // code method call or field reference
   public final void codeM(Member m) {
@@ -525,9 +524,9 @@ public class ClassFile implements Cloneable {
       if (inInterface) {    // declared in interface ?
         // based on the assumption that interfaces may not have constructors
         writeShort((1+((Method)m).getParameterTypes().length)<<8); //|  <nargs> 0
-      };
-    };
-  };
+      }
+    }
+  }
 
   //////////////////////// BRANCHES HANDLING VARS \\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -572,8 +571,8 @@ public class ClassFile implements Cloneable {
         if (Debug.enabled) {
           branchStack.push(cW);
           Debug.check(cW>=beforeStk);
-        };
-    
+        }
+
         // remove the result of the previous branch, the other branch must
         // put the same thing back into the types stack
         cW=beforeStk;
@@ -598,7 +597,7 @@ public class ClassFile implements Cloneable {
           // FA -- ensure_value();
           // E9 -- unblock unconditional jumps
           // EF -- land unblocked unconditional labels
-        };
+        }
         break;
       case 3:  // opc=231  (0xE7)  -- unblock "false" labels
       case 4:  // opc=232  (0xE8)  -- unblock "true" labels
@@ -628,9 +627,9 @@ public class ClassFile implements Cloneable {
             tsize=addrpos;
             writeShort(currpos-addrpos+1);
             tsize=currpos;
-          };
-        };
-        break;
+          }
+        }
+      break;
       case 12: // opc=240  (0xF0)  -- make down pointing "false" label (j0)
       case 13: // opc=241  (0xF1)  -- make down pointing "true" label  (j1)
       case 14: // opc=242  (0xF2)  -- make down pointing unconditional label
@@ -654,7 +653,7 @@ public class ClassFile implements Cloneable {
                            "Attempt to invert non jump bytecode ("+
                            currJump+")");
             currJump=(((currJump-1) ^ 0x0001)+1);
-          };
+          }
           iNJ=false;
 
           code(0x00F300+currJump);
@@ -664,8 +663,8 @@ public class ClassFile implements Cloneable {
           // F0 - make label j0     modified by s
           // ED - land labels j1    modified by s^1
           // EA - block labels j0   modified by s
-        };
-        break;
+        }
+      break;
       case 18: // opc=246  (0xF6)  -- logical end AND
       case 19: // opc=247  (0xF7)  -- logical end OR
         cstk[opc-(mc+18-3)].pop(); // just throw the corresponding block
@@ -678,7 +677,7 @@ public class ClassFile implements Cloneable {
           // if no jump in progress yet
           noteStk(0,-1); // "boolean" is removed from stack
           currJump=157;  //|
-        };
+        }
         break;
       case 22: // opc=250  (0xFA)  -- ensure value is in stack
         boolean noPendingJumps=false;
@@ -693,8 +692,8 @@ public class ClassFile implements Cloneable {
           
           noPendingJumps=(cstk[0].size()==blocked0) &&
             (cstk[1].size()==blocked1);
-        };
-    
+        }
+
         if (!noPendingJumps) {
           // if there are pending jumps or jump in progress
           code(0xE4); //         branch_true();
@@ -702,7 +701,7 @@ public class ClassFile implements Cloneable {
           code(0xE5); //         branch_false();
           codeLDC(Boolean.FALSE,0);
           code(0xE6); //         branch_end();
-        };
+        }
         break;
       case 23: // opc=251  (0xFB)  -- block labels
         code(0xEAEBEC);
@@ -725,11 +724,11 @@ public class ClassFile implements Cloneable {
         if (Debug.enabled)
           Debug.check(opc !=0xFF);
         write(opc);  
-      };
+      }
       op=op >>> 8;
-    };
-  };
-  
+    }
+  }
+
   // Shortcut load opcodes for int type
   // index is value+1; allowed values from -1 to 5.
   // other values should be loaded from CP.
@@ -775,7 +774,7 @@ public class ClassFile implements Cloneable {
         short_opcodes=0x09+(int)lv;
       } else if ((lv>=-1) && (lv<=5)) {
         short_opcodes=0x8503+(int)lv;
-      };
+      }
       break;
     case 6:
       float fv=((Float)o).floatValue();
@@ -801,8 +800,8 @@ public class ClassFile implements Cloneable {
       if (Debug.enabled) 
         Debug.check(false,"Loading of object constants is not supported by "+
                      "the Java class files.");
-    };
-    
+    }
+
     if (short_opcodes==0) {
       // longs and doubles occupy two elements of stack all others just one
       boolean dword_const=((primitiveID==5) || (primitiveID==7));
@@ -819,8 +818,8 @@ public class ClassFile implements Cloneable {
       } else {
         // makes use of the fact that primitiveID(Object)==typeID(string)
         cpindex=getIndex(o,primitiveID);
-      };
-      
+      }
+
       if (Debug.enabled)  
         Debug.check((cpindex>=0) && (cpindex<=65535));
 
@@ -833,7 +832,7 @@ public class ClassFile implements Cloneable {
         if (dword_const) opc++;              //|   ldc2_w
         write(opc);
         writeShort(cpindex);
-      };
+      }
 
     } else {
       codeB(short_opcodes);
@@ -843,8 +842,8 @@ public class ClassFile implements Cloneable {
     if (tsb_store) {
       code(0x08FE);
       noteStk(11,-1);        // remove extra string used up by constructor
-    };
-  };
+    }
+  }
 
   //=========================================================
   //================= CONSTANTS POOL HANDLING ===============
@@ -866,11 +865,11 @@ public class ClassFile implements Cloneable {
         constPool.writeUTF(str);
       } catch (java.io.IOException e) {
         if (Debug.enabled) Debug.reportThrowable(e);
-      };
+      }
       UTFs.put(str,index);
-    };
+    }
     return index.intValue();
-  };
+  }
 
   // encodes types of relevant objects as integers
   // for classes corresponding to primitive types codes are the same as 
@@ -882,7 +881,7 @@ public class ClassFile implements Cloneable {
     if (item instanceof Class) return 9;
     if (item instanceof Member) return 10;
     return -1;
-  };
+  }
 
   /**
    * Used to determine an old CP index or to create a new one for an item.
@@ -891,7 +890,7 @@ public class ClassFile implements Cloneable {
    */
   private final int getIndex(Object item) {
     return getIndex(item,typeID(item));
-  };
+  }
 
   /**
    * Used to determine an old CP index or to create a new one for an item.
@@ -975,15 +974,15 @@ public class ClassFile implements Cloneable {
             Debug.println("Can't place an item of type \""+
                           item.getClass().getName()+
                           "\" to the constant pool.");
-        };
+        }
       } catch (java.io.IOException e) {
         if (Debug.enabled) Debug.reportThrowable(e);
-      };
+      }
       index=new Integer(newIndex);
       Items.put(item,index);
-    };
+    }
     return index.intValue();
-  };
+  }
 
   // writes out full reference to method, interface or field
   // this includes UTFs, Name&Type and XXX_ref entries
@@ -1016,14 +1015,14 @@ public class ClassFile implements Cloneable {
     constPool.writeShort(nat_ind);
 
     return index;
-  };
+  }
 
 
   //================================================================
   //================== END OF CONSTANT POOL HANDLING ===============
   //================================================================
 
-};
+}
 
 
 

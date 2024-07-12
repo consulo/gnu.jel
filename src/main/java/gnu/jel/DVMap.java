@@ -70,6 +70,6 @@ public abstract class DVMap {
    */
   public Object translate(String name) {
     return name;
-  };
+  }
 
-};
+}

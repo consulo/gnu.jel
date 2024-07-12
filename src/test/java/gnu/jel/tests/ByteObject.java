@@ -25,14 +25,14 @@ public class ByteObject implements gnu.jel.reflect.Byte {
   
   public ByteObject(byte val) {
 	this.val=val;
-  };
+  }
 
   public byte getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

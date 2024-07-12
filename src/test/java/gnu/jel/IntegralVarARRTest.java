@@ -71,4 +71,4 @@ public class IntegralVarARRTest extends TestingUtils {
     simExpression("arrDoubleJELObj", vp.arrDoubleJELObj, null, rtp, lib,null);
   }
   
-};
+}

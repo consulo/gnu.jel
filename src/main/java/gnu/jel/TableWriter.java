@@ -319,8 +319,8 @@ public class TableWriter {
       } catch(Exception exc) {
 		Debug.println("Exception when writing tables:");
 		Debug.reportThrowable(exc);
-      };
-    };
-  };
+      }
+    }
+  }
 }
 

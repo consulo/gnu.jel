@@ -67,7 +67,7 @@ public class LibraryDotOPTest extends TestCase {
       assertTrue(false);
     } catch (CompilationException exc) {
       assertTrue(true);
-    };
+    }
   }
  
 }

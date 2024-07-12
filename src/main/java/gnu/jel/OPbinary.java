@@ -51,7 +51,7 @@ public class OPbinary extends OP {
     ops=(int[][])TableKeeper.getTable("ops");
     promotionTypes=(byte[])TableKeeper.getTable("promotionTypes");
     opNames=(String[])TableKeeper.getTable("binOpNames");
-  };
+  }
 
   /**
    * Constructs a new binary operation.
@@ -124,7 +124,7 @@ public class OPbinary extends OP {
       if (opsIDX==-1) { // types are incompatible (can't promote)
         Object[] paramsExc={op1Type,op2Type,opNames[opcode]};
         throw new CompilationException(15,paramsExc);
-      };
+      }
 
       break;
     case 3: // array promotion
@@ -138,7 +138,7 @@ public class OPbinary extends OP {
         resID=op1cvtID=opsIDX=
           OPunary.unary_prmtns[op1IDuwrp];
         second_narrowing=true;
-      };
+      }
 
       // integral types mask
       //      7 6 5 4 3 2 1 0
@@ -146,7 +146,7 @@ public class OPbinary extends OP {
       if (((0x3E>>op2IDuwrp) & 1)==0) { // type is not integral
         Object[] paramsExc={opNames[opcode],op2Type};
         throw new CompilationException(27,paramsExc);
-      };
+      }
       op2cvtID=4;
       break;
     case 4: // string concatenation promotion
@@ -158,30 +158,30 @@ public class OPbinary extends OP {
       if (Debug.enabled)
         Debug.println("Wrong promotion type for binary OP "+
                       promotionTypes[opcode]);
-    };
-    
+    }
+
     // check if the OP can be implemented
     if (ops[opcode][opsIDX]==0xFF) { // operation is not defined on types
       Object[] paramsExc={opNames[opcode],op1Type,op2Type};
       throw new CompilationException(16,paramsExc);
-    };
-    
+    }
+
     // insert type conversion opcode
     if ((op1ID!=op1cvtID) && (op1cvtID!=8)) {
       paramOPs.push(chi[0]);
       chi[0]=new OPunary(paramOPs,op1cvtID,null,op1cvtID==10);
       //                                        can narrow to TSB
-    };
+    }
 
     if ((op2ID!=op2cvtID) && (op2cvtID!=8)) {
       paramOPs.push(chi[1]);
       chi[1]=new OPunary(paramOPs,op2cvtID,null,second_narrowing);
-    };
+    }
 
     if (resID!=8)
       resType=specialTypes[resID];
-  };
- 
+  }
+
   public void compile(ClassFile cf) {
     if ((code==17) || (code==18)) {
       chi[0].compile(cf);
@@ -203,8 +203,8 @@ public class OPbinary extends OP {
       
       if (cf.currJump==0) // jumps do not load anything to the stack
         cf.noteStk(-1,resID);
-    };
-  };
+    }
+  }
 
   public Object eval() throws Exception {
     
@@ -219,13 +219,13 @@ public class OPbinary extends OP {
       c1w=chi[0].eval();
     } catch (Exception e) {
       ep1=true;
-    };
-    
+    }
+
     try {
       c2w=chi[1].eval();
     } catch (Exception e) {
       ep2=true;
-    };
+    }
 
     try {
       if (ep1 || ep2 || (code==19)) // array access can't be evaluated.
@@ -242,7 +242,7 @@ public class OPbinary extends OP {
                        "operate on objects.");
           Debug.check(c1ID!=10, "No TSB in this context 1");
           Debug.check(c1ID!=10, "No TSB in this context 2");
-        };
+        }
 
         // only string literal comparisons are interpreted
         if ((c1ID!=11) || (c2ID!=11))
@@ -280,14 +280,14 @@ public class OPbinary extends OP {
           case 13: boolres=true; resbool=(d1<=d2); break; //LE
           default :
             wrop=true;
-          };
+          }
           if (Debug.enabled && wrop)
             Debug.println("Wrong operation on float ("+code+").");      
         
           if (!boolres) n1=new Double(d1);
           else { // booleans are represented by longs temporarily
             if (resbool) n1=new Long(1L); else n1=new Long(0);
-          };
+          }
         } else { // operations on integers
           long l1=n1.longValue(),l2=n2.longValue();
           switch (code) {
@@ -320,16 +320,16 @@ public class OPbinary extends OP {
           default :
             if (Debug.enabled)
               Debug.println("Wrong operation on integer ("+code+").");      
-          };
+          }
           n1=new Long(l1);
-        };
-      
+        }
+
         // Narrow    
         if (boolres) {
           c1w=narrow(n1,0);
         } else c1w=narrow(n1,resID);
         
-      };
+      }
       return c1w;
     } catch (Exception thr) {
       // if can't evaluate -- replace operands at least
@@ -344,7 +344,7 @@ public class OPbinary extends OP {
       //      Debug.reportThrowable(thr);
       // IGNORE
     }
-  };
+  }
 
-};
+}
 

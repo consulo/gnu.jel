@@ -100,4 +100,4 @@ public class IntegralBoxUnboxTest extends TestingUtils {
                   5.5, null, rtp, lib, null);
   }
 
-};
+}

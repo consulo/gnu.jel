@@ -58,14 +58,14 @@ public class Calculator {
       for(int i=0;i<help.length;i++)
 	System.err.println(help[i]);
       return;
-    };
-    
+    }
+
     // Assemble the expression
     StringBuffer expr_sb=new StringBuffer();
     for(int i=0;i<args.length;i++) {
       expr_sb.append(args[i]);
       expr_sb.append(' ');
-    };
+    }
     String expr=expr_sb.toString();
 
     // Set up library
@@ -74,13 +74,13 @@ public class Calculator {
       staticLib[0]=Class.forName("java.lang.Math");
     } catch(ClassNotFoundException e) {
       // Can't be ;)) ...... in java ... ;)
-    };
+    }
     Library lib=new Library(staticLib,null,null,null,null);
     try {
     lib.markStateDependent("random",null);
     } catch (CompilationException e) {
       // Can't be also
-    };
+    }
 
     // Compile
     CompiledExpression expr_c=null;
@@ -94,7 +94,7 @@ public class Calculator {
       int column=ce.getColumn(); // Column, where error was found
       for(int i=0;i<column+23-1;i++) System.err.print(' ');
       System.err.println('^');
-    };
+    }
 
     if (expr_c !=null) {
       
@@ -106,17 +106,17 @@ public class Calculator {
 	System.err.println("Exception emerged from JEL compiled"+
 			   " code (IT'S OK) :");
 	System.err.print(e);
-      };
-      
+      }
+
       // Print result
       if (result==null) 
 	System.out.println("void");
       else
 	System.out.println(result.toString());
-    };
-    
+    }
+
     // Done
-  };
-};
+  }
+}
 
 

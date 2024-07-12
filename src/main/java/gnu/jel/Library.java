@@ -127,7 +127,7 @@ public class Library {
       Class<?>[] temp=new Class<?>[1];
       for(int i=0;i<dotClasses.length;i++) 
         rehash(dotClasses[i]);
-    };
+    }
 
     names = new HashMap<String,HashMap<String,Member>>();
     dynIDs = new HashMap<Member,Integer>();
@@ -137,7 +137,7 @@ public class Library {
       rehash(staticLib,names,null,stateless);
     if (dynamicLib!=null)
       rehash(dynamicLib,names,dynIDs,null);
-  };
+  }
 
   private void rehash(Class<?> cls) {
     HashMap<String,HashMap<String,Member>> tempNames=new HashMap<String,HashMap<String,Member>>();
@@ -146,7 +146,7 @@ public class Library {
     //    rehash(temp,tempNames,null,new HashMap());
     rehash(temp,tempNames,new HashMap<Member,Integer>(),null);
     dotClasses.put(cls,tempNames);
-  };
+  }
 
   private static void rehash(Class<?>[] arr, 
                              HashMap<String,HashMap<String,Member>>hashedNames,
@@ -168,10 +168,10 @@ public class Library {
         } else { // not static
           if ((dynIDs!=null) && rehash(hashedNames,m))
             dynIDs.put(m,dynID);
-        };
-      };
-    };
-  };
+        }
+      }
+    }
+  }
 
   private static boolean rehash(HashMap<String,HashMap<String,Member>> hashedNames, Member m) {
     String name=m.getName();
@@ -188,13 +188,13 @@ public class Library {
       signatures_new.put(signature,m);
       hashedNames.put(name,signatures_new);
       return true;
-    };
+    }
     // Name exists in the library, check for possible signature conflict.
     Object conflicting_method=signatures.get(signature);
     if (conflicting_method==null) { // No conflict
       signatures.put(signature,m);
       return true;
-    };
+    }
 //      if (Debug.enabled) {
 //        Debug.println("Conflict was detected during the library "+
 //                      "initialization."+
@@ -203,7 +203,7 @@ public class Library {
 //      };
     // If no debug then the method is ignored.
     return false;
-  };
+  }
 
   /**
    * This method marks a static member as having the internal state.
@@ -230,8 +230,8 @@ public class Library {
     if (Debug.enabled)
       Debug.check(removed!=null,"State dependent methos \""+m+
 		   "\"is made state dependend again.");
-  };
-  
+  }
+
   /**
    * Used to check if the given method is stateless.
    * @param o is method or field to check.
@@ -240,7 +240,7 @@ public class Library {
    */
   public boolean isStateless(Member o) {
     return stateless.containsKey(o);
-  };
+  }
 
   /**
    * Searches the namespace defined by this library object for method or field.
@@ -278,13 +278,13 @@ public class Library {
         // dot is not allowed in this particular class
         Object[] paramsExc={container};
         throw new CompilationException(12,paramsExc);
-      };
+      }
       if ((hashedMembers=dotClasses.get(container))==null) {
         rehash(container);
         hashedMembers=dotClasses.get(container);
-      };
-    };
-    
+      }
+    }
+
 
     HashMap<String,Member> signatures=hashedMembers.get(name);
 
@@ -294,8 +294,8 @@ public class Library {
     if (signatures==null) { // name is not found
       Object[] paramsExc={name,container};
       throw new CompilationException(container==null?5:6,paramsExc);
-    };
-    
+    }
+
     // Choose applicable methods
     List<Member> applicable_methods=
       getApplicable(container, name, params, signatures,-1);
@@ -340,14 +340,14 @@ public class Library {
           applicable=true;
           for(int i=0;((i<cp.length) && applicable);i++) {
             applicable=OP.isWidening(params[i],cp[i]);
-          };
-        };
+          }
+        }
       } else {
         applicable=(cp.length==0);
-      };
-      
+      }
+
       if (applicable) applicable_methods.add(cm);
-    };
+    }
     return applicable_methods;
   }
   
@@ -387,13 +387,13 @@ public class Library {
           OP.isWidening(cp[i],most_specific_params[i]);
         lessSpecific = lessSpecific &&
           OP.isWidening(most_specific_params[i],cp[i]);
-      };
-      
+      }
+
       if (moreSpecific && (!lessSpecific)) {
         most_specific=cm;
         most_specific_params=cp;
-      };
-      
+      }
+
       if (! (moreSpecific ^ lessSpecific)) {
         Object[] paramsExc={describe(name,most_specific_params),
                             describe(name,cp),
@@ -415,11 +415,11 @@ public class Library {
       for(int k=0;k<params.length;k++) {
         if (k!=0) invp.append(',');
         invp.append(params[k].toString());
-      };
+      }
     invp.append(')');
     return invp.toString();
-  };
-  
+  }
+
   /**
    * Returns ID (position in the object array) of the dynamic method.
    * <P> ID's are used to locate the pointers to the objects, implementing
@@ -433,9 +433,9 @@ public class Library {
     Integer id=dynIDs.get(m);
     if (id==null) return -1;
     return id.intValue();
-  };
+  }
 
-    /**
+  /**
    * Used to get return type of a class member.
    * <P>The type of a method is its return type, the type of a constructor is
    * void.
@@ -450,7 +450,7 @@ public class Library {
     if (Debug.enabled)
       Debug.check(m instanceof java.lang.reflect.Constructor);
     return OP.specialTypes[9]; // java.lang.reflect.Void.TYPE
-  };
+  }
 
   /**
    * Used to get types of formal parameters of a member.
@@ -484,7 +484,7 @@ public class Library {
         Debug.check((m instanceof Field)||(m instanceof LocalField));
       return new Class<?>[0];
     }
-  };
+  }
 
   /**
    * Computes signature of the given member.
@@ -499,15 +499,15 @@ public class Library {
       for(int i=0;i<parameters.length;i++) 
         appendSignature(signature,parameters[i]);
       signature.append(')');
-    };
+    }
     appendSignature(signature,getType(m));
     return signature.toString();
-  };
+  }
 
   public static boolean isField(Member m) {
     return (m instanceof Field) || ((m instanceof LocalField)
                                     && !(m instanceof LocalMethod));
-  };
+  }
 
   /**
    * Computes the signature of the given class.
@@ -525,7 +525,7 @@ public class Library {
    */
   public static String getSignature(Class<?> cls) {
     return appendSignature(new StringBuilder(),cls).toString();
-  };
+  }
 
   private static StringBuilder appendSignature(StringBuilder buff, Class<?> cls) {
     if (cls.isPrimitive()) {
@@ -538,13 +538,13 @@ public class Library {
       buff.append('L');
       appendHistoricalForm(buff,cls.getName());
       buff.append(';');
-    };
+    }
     return buff;
-  };
+  }
 
   public static String toHistoricalForm(String className) {
     return appendHistoricalForm(new StringBuilder(),className).toString();
-  };
+  }
 
   private static StringBuilder appendHistoricalForm(StringBuilder buff,
                                                    String className) {
@@ -553,9 +553,9 @@ public class Library {
       char cch=className.charAt(i);
       if (cch=='.') cch='/';
       buff.append(cch);
-    };
+    }
     return buff;
-  };
+  }
 
-  
-};
+
+}

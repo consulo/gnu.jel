@@ -25,14 +25,14 @@ public class FloatObject implements gnu.jel.reflect.Float {
   
   public FloatObject(float val) {
 	this.val=val;
-  };
-  
+  }
+
   public float getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

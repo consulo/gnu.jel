@@ -25,18 +25,18 @@ public class StringObject implements gnu.jel.reflect.String {
   
   public StringObject(String val) {
 	this.val=val;
-  };
-  
+  }
+
   public int aMethod() {
     return 1;
-  };
+  }
 
   public boolean equals(Object obj) {
     if (!(obj instanceof StringObject)) return false;
     return val.equals(((StringObject)obj).val);
-  };
+  }
 
   public String toString() {
     return val;
-  };
-};
+  }
+}

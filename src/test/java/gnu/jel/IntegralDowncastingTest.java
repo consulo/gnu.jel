@@ -126,13 +126,13 @@ public class IntegralDowncastingTest extends TestingUtils {
         newRTP[newRTP.length-1]=VariableProvider.makeJELDoubleObject(55);
         break;
       default:
-      };
-        newDynamicLib[newDynamicLib.length-1]=
+      }
+      newDynamicLib[newDynamicLib.length-1]=
           newRTP[newRTP.length-1].getClass();
         
         Library lib1=new Library(staticLib,newDynamicLib,new Class<?>[0],vp,null);
         simExpression("aMethod", new Integer(1),null,newRTP,lib1,null);
-    };
+    }
   }
 
   public void test5() throws Throwable {
@@ -147,10 +147,10 @@ public class IntegralDowncastingTest extends TestingUtils {
         } catch(Exception e) {
           System.out.println(e);
           System.exit(1);
-        };
+        }
       simExpression(fname,res,null,rtp,lib,null);
-    };
-  };
+    }
+  }
 
   public void test6() throws Throwable {
     simExpression("valString",new StringObject("strObj"),
@@ -187,4 +187,4 @@ public class IntegralDowncastingTest extends TestingUtils {
                    null, rtp, lib, null);
   }
     
-};
+}

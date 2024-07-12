@@ -86,6 +86,6 @@ public class IntegerStackTest extends TestCase {
     assertEquals(13,is2.pop());
     assertEquals(0,is2.pop());
 
-  };
-  
+  }
+
 }

@@ -27,15 +27,18 @@ public class VariableProvider extends gnu.jel.DVMap {
   public String strVar;
  
   
-  public double x() {return xvar;};
-  public static double xS() {return 5.3;};
-  public java.lang.Double xX() {return new java.lang.Double(xvar);};
-  public static java.lang.Double xXS() {return new java.lang.Double(5.3);};
+  public double x() {return xvar;}
+
+  public static double xS() {return 5.3;}
+
+  public java.lang.Double xX() {return new java.lang.Double(xvar);}
+
+  public static java.lang.Double xXS() {return new java.lang.Double(5.3);}
 
   // void testing func
   public void voidf(String s) {
     return;
-  };
+  }
 
   // --- Dynamic variables testing section
 
@@ -44,23 +47,23 @@ public class VariableProvider extends gnu.jel.DVMap {
 
   public gnu.jel.reflect.Double getDoubleProperty(String name) {
     return (gnu.jel.reflect.Double) properties.get(name);
-  };
+  }
 
   public DoubleObject getTSDoubleProperty(String name) {
     return (DoubleObject) properties.get(name);
-  };
+  }
 
   public gnu.jel.reflect.Boolean getBooleanProperty(String name) {
     return (gnu.jel.reflect.Boolean) properties.get(name);
-  };
+  }
 
   public String getStringProperty(String name) {
     return (String) properties.get(name);
-  };
+  }
 
   public void addProperty(String name, Object value) {
     properties.put(name,value);
-  };
+  }
 
   public String getTypeName(String name) {
     // this is for testing translated names
@@ -78,12 +81,12 @@ public class VariableProvider extends gnu.jel.DVMap {
     //======== FOR JULIA DUNPHY
 
     return null;
-  };
+  }
 
   //-------- FOR JULIA DUNPHY
   public double[] getDoubleArrProperty(String name) {
     return (double[]) properties.get(name);
-  };
+  }
   //======== FOR JULIA DUNPHY
 
   // --- END OF (Dynamic variables testing section)
@@ -113,28 +116,28 @@ public class VariableProvider extends gnu.jel.DVMap {
     arr[2]=6.0;
     intObj=new IntegerObject(555);
     byteObj=new ByteObject((byte)2);
-  };
+  }
 
   public static int throw_arg_eq_4(int x) throws Exception {
     if (x==4) throw new Exception("An exception from testsuite.");
     return 0;
-  };
+  }
 
   public static int bool2int(boolean b) {
     if (b) return 1; else return 0;
-  };
+  }
 
   public static float NaNf() {
     return Float.NaN;
-  };
+  }
 
   public static double NaNd() {
     return Double.NaN;
-  };
+  }
 
   public static Double makeDoubleObject(double d) {
     return new Double(d);
-  };
+  }
 
   public boolean[] arrBoolean={true};
   public byte[] arrByte={(byte)1};
@@ -196,72 +199,73 @@ public class VariableProvider extends gnu.jel.DVMap {
 
   public static boolean isNullDouble(java.lang.Double d) {
     return d==null;
-  };
+  }
 
   public static java.lang.Double getDoubleNull() {
     return null;
-  };
+  }
 
-  
+
   public static int convertNumberToInt(Number n) {
     return n.intValue();
-  };
+  }
 
   public static int addNumbersInt(Number n1,Number n2) {
     return n1.intValue()+n2.intValue();
-  };
+  }
 
   public static double convertNumberToDouble(Number n) {
     return n.doubleValue();
-  };
+  }
 
   public static double addNumbersDbl(Number n1,Number n2) {
     return n1.doubleValue()+n2.doubleValue();
-  };
-  
+  }
+
   public static gnu.jel.reflect.Boolean makeJELBooleanObject(boolean b) {
     return new BooleanObject(b);
-  };
+  }
 
   public static gnu.jel.reflect.Byte makeJELByteObject(byte v) {
     return new ByteObject(v);
-  };
+  }
 
   public static gnu.jel.reflect.Character makeJELCharacterObject(char v) {
     return new CharacterObject(v);
-  };
+  }
 
   public static gnu.jel.reflect.Short makeJELShortObject(short v) {
     return new ShortObject(v);
-  };
+  }
 
   public static IntegerObject makeJELIntegerObject(int v) {
     return new IntegerObject(v);
-  };
+  }
 
   public static gnu.jel.reflect.Long makeJELLongObject(long v) {
     return new LongObject(v);
-  };
+  }
 
   public static gnu.jel.reflect.Float makeJELFloatObject(float v) {
     return new FloatObject(v);
-  };
+  }
 
   public static gnu.jel.reflect.Double makeJELDoubleObject(double d) {
     return new DoubleObject(d);
-  };
+  }
 
   // next two methods test overloading of unwrappable types
   public static int methodOnInt(int i) {
     return i;
-  };
+  }
+
   public static int methodOnInt(gnu.jel.reflect.Integer iobj) {
     return iobj.getValue()+1;
-  };
+  }
 
   public static String append_ttt(String str) {
     return str+"_ttt";
-  };
+  }
 
   public Object translate(String name) {
     if (name.startsWith("_T_")) {
@@ -269,12 +273,12 @@ public class VariableProvider extends gnu.jel.DVMap {
       return new Integer(name.charAt(3)-'a');
     } else
       return name;
-  };
+  }
 
   public String getStringProperty(int num) {
     char lett=(char)('a'+num);
     return "_U_"+lett;
-  };
+  }
 
   // varargs testing functions  
   public static int sum(int[] args) {
@@ -316,4 +320,4 @@ public class VariableProvider extends gnu.jel.DVMap {
   }
 
 
-};
+}

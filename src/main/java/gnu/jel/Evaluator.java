@@ -87,8 +87,8 @@ public class Evaluator {
         else 
           cls=(new Object()).getClass();
         eval_methods[i]=new LocalMethod(0x0001,cls,name,paramsE,excptnsE);
-      };
-      
+      }
+
       Class<?> cmplExpr=Class.forName("gnu.jel.CompiledExpression");
       ClassFile cf=new ClassFile(0x0001,"gnu/jel/dump",cmplExpr,null,null);
       // public 
@@ -134,9 +134,9 @@ public class Evaluator {
       cf_orig=cf.clone();
     } catch (Exception exc) {
       if (Debug.enabled) Debug.reportThrowable(exc);
-    };
-  };
-  
+    }
+  }
+
   /**
    * Compiles expression, resolving the function names in the library.
    * @param expression is the expression to compile. i.e. "sin(666)" .
@@ -188,10 +188,10 @@ public class Evaluator {
     try {
       code=new OPload(code,code.eval());
     } catch (Exception exc) {
-    };
+    }
 
     return getImage(code);
-  };
+  }
 
   /**
    * Compiles expression, resolving the function names in the library.
@@ -226,13 +226,13 @@ public class Evaluator {
   public static byte[] compileBits(String expression, Library lib)
     throws CompilationException {
     return compileBits(expression, lib, null);
-  };
+  }
 
   static OP parse(String expression, Library lib,
                                 Class<?> resultType) throws CompilationException {
     return (new Parser(expression,lib)).parse(resultType);
     //    return (new EC(new CharStream(expression))).parse(resultType,lib);
-  };
+  }
 
   static byte[] getImage(OP code) {
     int retID=code.resID;
@@ -264,9 +264,9 @@ public class Evaluator {
     code.compile(cf);
 
     return cf.getImage();
-  };
-  
-};
+  }
+
+}
 
 
 

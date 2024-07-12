@@ -65,4 +65,4 @@ public class IntegralVarargsTest extends TestingUtils {
   }
 
 
-};
+}

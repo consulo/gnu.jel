@@ -101,8 +101,8 @@ public class IntegralPrimitiveOPsTest extends TestingUtils {
       testBinaryPrimitive(16,25,lib,rtp,0,null,prefixes[k],suffixes[k]); // >>>
       testBinaryPrimitive(17,1,lib,rtp,1,null,prefixes[k],suffixes[k]); // &&
       testBinaryPrimitive(18,1,lib,rtp,1,null,prefixes[k],suffixes[k]); // ||
-    };
+    }
 
   }
     
-};
+}

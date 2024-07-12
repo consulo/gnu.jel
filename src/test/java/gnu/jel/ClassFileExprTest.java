@@ -71,7 +71,7 @@ public class ClassFileExprTest extends TestCase {
       else 
         cls=(new Object()).getClass();
       eval_methods[i]=new LocalMethod(0x0001,cls,name,paramsE,null);
-    };
+    }
 
     // hand-compile a class template
     Class<?> cmplExpr=Class.forName("gnu.jel.CompiledExpression");
@@ -123,17 +123,17 @@ public class ClassFileExprTest extends TestCase {
   public void testExpr1() throws Throwable {
     exprMiniComp("1 (I)",dynalib,lib,new Integer(1),
              cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr2() throws Throwable {
     exprMiniComp("1 (I)",dynalib,lib,new Integer(1),
              cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr3() throws Throwable {
     exprMiniComp("1 -- (I)",dynalib,lib,new Integer(-1),
              cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   // Passing constants of primitive types.
   // this also tests shortcut commands for loading some integer
@@ -142,12 +142,12 @@ public class ClassFileExprTest extends TestCase {
   public void testExpr4() throws Throwable {
     exprMiniComp("1 --",dynalib,lib,new Integer((byte)-1),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
-  
+  }
+
   public void testExpr5() throws Throwable {
     exprMiniComp("1L --",dynalib,lib,new Long(-1),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr6() throws Throwable {
     for(byte i=0;i<=6;i++) {
@@ -155,29 +155,29 @@ public class ClassFileExprTest extends TestCase {
                    cf_orig,retID_patchback,eval_methods,false);
       exprMiniComp(String.valueOf(i)+'L',dynalib,lib,new Long(i),
                    cf_orig,retID_patchback,eval_methods,false);
-    };
-  };
-  
+    }
+  }
+
   public void testExpr7() throws Throwable {
     for(byte i=0;i<=3;i++) {
       exprMiniComp(String.valueOf(i)+".0F",dynalib,lib,new Float(i),
                    cf_orig,retID_patchback,eval_methods,false);
       exprMiniComp(String.valueOf(i)+".0",dynalib,lib,new Double(i),
                    cf_orig,retID_patchback,eval_methods,false);
-    };
-  };
+    }
+  }
 
   public void testExpr8() throws Throwable {
     exprMiniComp("true",dynalib,lib,Boolean.TRUE,
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr9() throws Throwable {
     exprMiniComp("false",dynalib,lib,Boolean.FALSE,
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
-        
+
   // this tests immediate byte constants loading (1 byte in the code)
   // and loading through the CP.
   public void testExpr10() throws Throwable {
@@ -186,88 +186,88 @@ public class ClassFileExprTest extends TestCase {
                    cf_orig,retID_patchback,eval_methods,false);
       exprMiniComp(String.valueOf(i)+" -- (I)",dynalib,lib,new Integer(-i),
                    cf_orig,retID_patchback,eval_methods,false);
-    };
-  };
+    }
+  }
 
   public void testExpr11() throws Throwable {
     exprMiniComp("( 1 , 2 , min)",dynalib,lib,new Integer(1),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr12() throws Throwable {
     exprMiniComp("( ( E) , sin)",dynalib,lib,new Double(Math.sin(Math.E)),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr13() throws Throwable {
     exprMiniComp("2 , 2 , *",dynalib,lib,new Integer(4),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr14() throws Throwable {
     exprMiniComp("3 , 2 , * , 1 , -",dynalib,lib,new Integer(5),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr15() throws Throwable {
     exprMiniComp("3 , 2 , * , 1 , - , 3 , - , 2 , *",dynalib,lib,
                  new Integer(4),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr16() throws Throwable {
     exprMiniComp("3 , 2 , * , 1 , - , 3 , - , 2 , * , 4 , ==",dynalib,lib,
                  Boolean.TRUE,
                  cf_orig,retID_patchback,eval_methods,false);
-  };
-    
+  }
+
   public void testExpr17() throws Throwable {
       exprMiniComp("\"a\" , \"b\" , + , 4 , + , true , +",dynalib,lib,
                    "ab4true",
                    cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr18() throws Throwable {
     exprMiniComp("2 , 3 , > , 3 , 2 , >= , ||",dynalib,lib,
                  Boolean.TRUE,
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr19() throws Throwable {
          exprMiniComp("( isNaN)",dynalib,lib,
                   Boolean.FALSE,
                   cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr20() throws Throwable {
     exprMiniComp("1 , ( doubleValue) , + , 101 , ==",dynalib,lib,
                  Boolean.TRUE,
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr21() throws Throwable {
     exprMiniComp("( true ? 1 : 2 ) (I)",dynalib,lib,
                  new Integer(1),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr22() throws Throwable {
     exprMiniComp("( false ? 1 : 2 ) (I)",dynalib,lib,
                  new Integer(2),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
-  
+  }
+
   public void testExpr23() throws Throwable {
     exprMiniComp("( false ? 1 : 2 , 2 , + ) (I)",dynalib,lib,
                  new Integer(4),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   public void testExpr24() throws Throwable {
     exprMiniComp("( true ? ( 1 , 3 , + , 5 , min) : 2 ) (I)",dynalib,lib,
                  new Integer(4),
                  cf_orig,retID_patchback,eval_methods,false);
-  };
+  }
 
   private static void exprMiniComp(String expr, Object[] thisPtrs, Library lib,
                                    Object expRes, ClassFile cf_orig,
@@ -312,8 +312,8 @@ public class ClassFileExprTest extends TestCase {
       while ((cChar>0) && (((char)cChar)!=' ')) {
         cToken.append((char) cChar);
         cChar=sr.read();
-      };
-        
+      }
+
       if (cToken.length()>0) { // single symbol token
         char cTok=cToken.charAt(0);
         switch (cTok) {
@@ -434,15 +434,15 @@ public class ClassFileExprTest extends TestCase {
               String svalue=sval;
               if ((lc=='D') || (lc=='F')) {
                 svalue=svalue.substring(0,svalue.length()-1);
-              };
+              }
               Double value=null;
               try {
                 value=new Double(svalue);
               } catch (NumberFormatException e) {
                 System.err.println("Can;t parse \""+svalue+
                                    "\" as a floating point number.");
-              };
-                  
+              }
+
               Object otl=null;
               Class<?> otlc=null;
                 
@@ -452,7 +452,7 @@ public class ClassFileExprTest extends TestCase {
               } else {
                 otl=value;
                 otlc=Double.TYPE;
-              };
+              }
               paramOPs.push(new OPload(otl));
             } else { // integer literals
               String svalue=sval.toUpperCase();
@@ -471,12 +471,12 @@ public class ClassFileExprTest extends TestCase {
                 } else {
                   // Decimal number
                   value=Long.parseLong(svalue,10);
-                };
+                }
               } catch (NumberFormatException e) {
                 System.err.println("Number \""+svalue+
                                    "\" is too large, it does not fit even "+
                                    "into 64 bit long."); // Overflow ?
-              };
+              }
 
               Object otl=null;
               Class<?> otlc=null;
@@ -497,11 +497,11 @@ public class ClassFileExprTest extends TestCase {
               } else {
                 otl=new Long(value);
                 otlc=Long.TYPE;
-              };
+              }
               paramOPs.push(new OPload(otl));
-            };
-          };
-          break;
+            }
+          }
+        break;
         case '\'': // char token
           {
             String sval=cToken.toString().substring(1,cToken.length()-1);
@@ -520,16 +520,16 @@ public class ClassFileExprTest extends TestCase {
                 case '\"': ec='"'; break;
                 default:
                   ec=(char) Integer.parseInt(sval.substring(1),8);
-                };
+                }
               } catch (NumberFormatException e) {
                 System.err.println("Can;t parse \""+cToken+
                                    "\" as a character literal.");
-              };
+              }
               chr=ec;
-            };
+            }
             paramOPs.push(new OPload(new Character(chr)));
-          };
-          break;
+          }
+        break;
         case '"':
           {
             String sval=cToken.toString().substring(1,cToken.length()-1);
@@ -553,16 +553,16 @@ public class ClassFileExprTest extends TestCase {
                          ((ec=sval.charAt(i))>='0') && (ec<='7')) {
                     nval=nval<<3+(ec-'0');
                     i++;
-                  };
+                  }
                   i--;
                   ec=(char)nval;
-                };
-              };
+                }
+              }
               unescaped.append(ec);
-            };
+            }
             paramOPs.push(new OPload(unescaped.toString()));
-          };
-          break;
+          }
+        break;
         default: // function names 
           {
             if (cToken.toString().equals("true") )
@@ -582,7 +582,7 @@ public class ClassFileExprTest extends TestCase {
               for(int i=np-1;i>=0;i--) {
                 paramsOPs[i]=paramOPs.pop();
                 params[i]=paramsOPs[i].resType;
-              };
+              }
 
               // find method
               Member m=null; 
@@ -590,7 +590,7 @@ public class ClassFileExprTest extends TestCase {
                 m=lib.getMember(null,cToken.toString(),params);
               } catch (CompilationException exc) {
                 System.err.println("Can't find method \""+cToken+"\".");
-              };
+              }
 
               // put "this" pointer in place
               if ((m.getModifiers() & 0x0008)==0) {
@@ -600,23 +600,23 @@ public class ClassFileExprTest extends TestCase {
                 int classID=lib.getDynamicMethodClassID(m);
                 paramOPs.push(new OPload(new Integer(classID)));
                 paramOPs.push(new OPbinary(paramOPs,19));
-              };
-                
+              }
+
               // restore params & param ops
               for(int i=0;i<np;i++) {
                 paramOPs.push(paramsOPs[i]);
-              };
+              }
               paramOPs.push(new OPcall(m, np, paramOPs, false));
-            };
-          };
-        };
-      };
-    };
-      
+            }
+          }
+        }
+      }
+    }
+
     // remove TSB at return if present
     if ((paramOPs.peek()).resID==10) {
       paramOPs.push(new OPunary(paramOPs,11,null,false));
-    };
+    }
 
     OP rop=paramOPs.peek();
     int retID=rop.resID>9?8:rop.resID; // compute base type (actually
@@ -675,17 +675,17 @@ public class ClassFileExprTest extends TestCase {
         else 
           System.out.print("WRONG !!!");
         System.out.println("");
-      };
-        
+      }
+
       ok=ok && localOK;
 
       try {
         program=new OPload(program,program.eval());
       } catch (Exception exc) {
-      };
+      }
 
-    };
-      
+    }
+
     assertTrue(testTitle.toString(), ok);
       
     // rerun the failed test to get verbose output
@@ -694,28 +694,28 @@ public class ClassFileExprTest extends TestCase {
                                   true);
 
 
-  };
+  }
 
   public static String toStr(OP o) {
     if (o instanceof OPload) {
       OPload op=(OPload)o;
       if (op.resID==8) return "\""+op.what+"\"";
       return op.what.toString()+(op.resID>9?'L':"ZBCSIJFDLV".charAt(op.resID));
-    };
+    }
     if (o instanceof OPbinary) {
       String[] opSymbols={
         "+","-","*","/","%","&","|","^","==","!=","<",">=",
         ">","<=","<<",">>",">>>","&&","||","{}",".+."};
       OPbinary op=(OPbinary)o;
       return toStr(op.chi[0])+opSymbols[op.code]+toStr(op.chi[1]);
-    };
+    }
     if (o instanceof OPunary) {
       String[] opSymbols={"--","~","!","<RET>","(Z)","(B)",
                           "(C)","(S)","(I)","(J)",
                           "(F)","(D)","(L)","(POP)","->TSB","->STR"};
       OPunary op=(OPunary)o;
       return opSymbols[op.code]+toStr(op.chi[0]);      
-    };
+    }
     if (o instanceof OPcall) {
       OPcall op=(OPcall)o;
       if (op.m==null)
@@ -726,11 +726,11 @@ public class ClassFileExprTest extends TestCase {
         for (int i=0;i<op.chi.length;i++) {
           if (i>0) res.append(",");
           res.append(toStr(op.chi[i]));
-        };
+        }
         res.append(')');
         return res.toString();
       }
-    };
+    }
     if (o instanceof OPcondtnl) {
       OPcondtnl op=(OPcondtnl)o;
       StringBuffer res=new StringBuffer();
@@ -747,15 +747,15 @@ public class ClassFileExprTest extends TestCase {
         res.append(')');
       }
       return res.toString();
-    };
+    }
     return "<<<<<OP TYPE NOT IDENTIFIED>>>>";
-  };
+  }
 
   public static void dumpImage(ClassFile cf) throws Exception {
     java.io.FileOutputStream fos=
       new java.io.FileOutputStream("dump.class");
     fos.write(cf.getImage());
     fos.close();
-  };
+  }
 
 }

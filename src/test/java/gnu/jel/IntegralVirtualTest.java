@@ -124,4 +124,4 @@ public class IntegralVirtualTest extends TestingUtils {
     simExpression("voidf(\"test\")",Void.TYPE,null,rtp,lib,null);
   }
   
-};
+}

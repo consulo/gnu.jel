@@ -61,7 +61,7 @@ public class ParserTest extends TestCase {
     for (int i=0;i<part1.length;i++) {
       tok.nextToken();
       assertEquals(3+i,tok.type);
-    };
+    }
     tok.nextToken();          // read ^
     assertEquals(7,tok.type);  
     assertEquals(2,tok.ct_column); // it is in 2nd column
@@ -73,12 +73,12 @@ public class ParserTest extends TestCase {
     for (int i=0;i<part2Str.length;i++) {
       tok.nextToken();
       assertEquals(part2Int[i],tok.type);
-    };
+    }
 
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
     assertEquals(30,tok.ct_column); // it is in column 30, out of the line
-  };
+  }
 
   public void testSimpleMultiSymTokens() throws Exception {
     String mtokens="== != >= <= << >> && || >>>";
@@ -89,8 +89,8 @@ public class ParserTest extends TestCase {
     for (int i=0;i<part3Str.length;i++) {
       tok.nextToken();
       assertEquals(part3Int[i],tok.type);
-    };
-  };
+    }
+  }
 
   public void testMultiSymTokensSeparation() throws Exception {
     String mctokens="=! !! >! <! &! |! >!> >>!";    
@@ -110,11 +110,11 @@ public class ParserTest extends TestCase {
     for (int i=0;i<part4Str.length;i++) {
       tok.nextToken();
       assertEquals(part4Int[i],tok.type);
-    };
+    }
 
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testCharTokens()  throws Exception {
     String chartokens="' ' '\\n' 'a' '\\052' '\\\\' '\n' '\\'";
@@ -124,7 +124,7 @@ public class ParserTest extends TestCase {
     for (int i=0;i<char1.length;i++) {
       tok.nextToken();
       assertEquals(new Character(char1[i]),tok.val);
-    };
+    }
 
     try {
       tok.nextToken();    // read char with NL
@@ -134,8 +134,8 @@ public class ParserTest extends TestCase {
       assertEquals(27,e.col); // must fail
     }
     
-  };
-  
+  }
+
   public void testCharTokensErrors()  throws Exception {
     Parser tok;
 
@@ -145,7 +145,7 @@ public class ParserTest extends TestCase {
       assertTrue(false);     // can't pass
     } catch (CompilationException e) {
       assertEquals(3, e.col); // must fail
-    };
+    }
 
     tok=new Parser("'  '",lib);
     try {
@@ -153,9 +153,9 @@ public class ParserTest extends TestCase {
       assertTrue(false);     // can't pass
     } catch (CompilationException e) {
       assertEquals(3, e.col); // must fail
-    };
-    
-  };
+    }
+
+  }
 
   public void testStrTokens()  throws Exception {    
     String strtokens="\"\" \" \" \"ab\\052c\"";
@@ -164,8 +164,8 @@ public class ParserTest extends TestCase {
     for (int i=0;i<str1.length;i++) {
       tok.nextToken();
       assertEquals(str1[i],tok.val);
-    };
-  };
+    }
+  }
 
   public void testNameTokens()  throws Exception {    
     Parser tok=new Parser("a+bba",lib);
@@ -177,7 +177,7 @@ public class ParserTest extends TestCase {
     assertEquals("bba",tok.val);
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testIntegralTokens()  throws Exception {
     String i1tokens="1 011 258   0xFF 67000 456890L";
@@ -191,10 +191,10 @@ public class ParserTest extends TestCase {
     for (int i=0;i<i1.length;i++) {
       tok.nextToken();
       assertEquals(i1[i],tok.val);
-    };
+    }
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testIntegralLimit() throws Exception {
     Parser tok=new Parser("0xFFFFFFFF 2147483647",lib);
@@ -204,9 +204,9 @@ public class ParserTest extends TestCase {
     tok.nextToken();
     assertEquals(60,tok.type);
     assertEquals(new Integer(2147483647),tok.val);
-  };
+  }
 
-  
+
   public void testRealTokens() throws Exception {
     String d1tokens=".1 0.1 0.1E1 001.0E-1 001.0E-1F 1F";
     Object[] d1 = {new Double(0.1),new Double(0.1),
@@ -217,11 +217,11 @@ public class ParserTest extends TestCase {
     for (int i=0;i<d1.length;i++) {
       tok.nextToken();
       assertEquals(d1[i],tok.val);
-    };
+    }
 
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testNoCast()  throws Exception {
     Parser tok=new Parser("1",lib);
@@ -231,15 +231,15 @@ public class ParserTest extends TestCase {
     assertEquals(new Byte((byte)1),tok.val);
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testFalseCasts() throws Exception {
     String[] fcasts={"1","(","()","(a","(a[","(a)","(a)-"};
     for(int i=0;i<fcasts.length;i++) {
       Parser tok=new Parser(fcasts[i],lib);
       assertTrue(!tok.isCast());
-    };
-  };
+    }
+  }
 
   public void testTrueCasts() throws Exception {
     String[] tcasts={"(a)(","(a.b.c)0","(a.b.c[]"," ( a ) ( ",
@@ -248,8 +248,8 @@ public class ParserTest extends TestCase {
       Parser tok=new Parser(tcasts[i],lib);
       tok.nextToken();
       assertTrue(tok.isCast());
-    };
-  };
+    }
+  }
 
   public void testTab() throws Exception {
     Parser tok=new Parser("5*\t7",lib);
@@ -263,15 +263,15 @@ public class ParserTest extends TestCase {
     assertEquals(new Byte((byte)7),tok.val);
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
-  
+  }
+
   public void testDoubleBndry() throws Exception {
     Parser tok=new Parser("1.0-+1.0",lib);
     tok.nextToken();
     assertEquals(60,tok.type);
     assertEquals(new Double(1.0),tok.val);
-  };
-  
+  }
+
   public void testFNCall() throws Exception {
     Parser tok=new Parser("sin(1)",lib);
     tok.nextToken();
@@ -287,11 +287,11 @@ public class ParserTest extends TestCase {
     assertEquals(42, tok.type);
     tok.nextToken();
     assertEquals(-1,tok.type);  // read EOF
-  };
+  }
 
   public void testCast() throws Exception {
     Parser tok=new Parser("(float)4",lib);
     tok.nextToken();
     assertTrue(tok.isCast());
-  };
+  }
 }

@@ -51,7 +51,7 @@ public class OPcondtnl extends OP {
     if (argID!=0) { // unwrap
       paramOPs.push(chi[0]);
       chi[0]=new OPunary(paramOPs,0,null,false);
-    };
+    }
 
     // determine the result type according to JLS 15.24
     resID=-1;
@@ -64,9 +64,9 @@ public class OPcondtnl extends OP {
       } else if (isWidening(type2ID, type2, type1ID, type1)) {
         resID=type1ID;
         resType=type1;
-      };
+      }
       // otherwise both must unwrap to primitives, which is checked next
-    };
+    }
 
     if (resID<0) {
       // if reference conversion did not work
@@ -83,25 +83,25 @@ public class OPcondtnl extends OP {
               ((resID=OPbinary.promotions[type1IDunwrp][type2IDunwrp])<0)) {
             Object[] paramsExc={type1,type2};
             throw new CompilationException(24,paramsExc);
-          };
-        };
-      };
+          }
+        }
+      }
       resType=specialTypes[resID]; // here it's always the primitive
-    };
-    
+    }
+
     // convert types
     if ((type1ID!=resID) || ((resID==8) && (type1!=null) && 
                              (type1!=resType))) {
       paramOPs.push(chi[1]);
       chi[1]=new OPunary(paramOPs,resID,resType,false);
-    };
-    
+    }
+
     if ((type2ID!=resID) || ((resID==8) && (type2!=null) && 
                              (type2!=resType))) {
       paramOPs.push(chi[2]);
       chi[2]=new OPunary(paramOPs,resID,resType,false);
-    };
-  };
+    }
+  }
 
   public void compile(ClassFile cf) {
     chi[0].compile(cf);
@@ -112,8 +112,8 @@ public class OPcondtnl extends OP {
       cf.code(0xE5); // finish "true" branch / start "false" branch
       chi[2].compile(cf);
       cf.code(0xE6); // finish "false" branch
-    };
-  };
+    }
+  }
 
   public Object eval() throws Exception {
     boolean cond;
@@ -123,14 +123,14 @@ public class OPcondtnl extends OP {
       try {
         chi[1]=new OPload(chi[1],chi[1].eval());
       } catch (Exception exc) {
-      };
+      }
       try {
         chi[2]=new OPload(chi[2],chi[2].eval());
       } catch (Exception exc) {
-      };
+      }
       throw e;
-    };
-    
+    }
+
     OP rop=cond?chi[1]:chi[2];
         
     try {
@@ -142,6 +142,6 @@ public class OPcondtnl extends OP {
       chi[2]=null;
       throw e;
     }
-  };
+  }
 
-};
+}

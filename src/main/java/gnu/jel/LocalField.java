@@ -51,27 +51,27 @@ public class LocalField implements Member {
 	this.name=name;
 	this.modifiers=modifiers;
     this.constValue=constValue;
-  };
+  }
 
   public Class<?> getDeclaringClass() {
   	return null; // means local field
-  };
+  }
 
   public java.lang.String getName() {
 	return name;
-  };
+  }
 
   public int getModifiers() {
 	return modifiers;
-  };
-    
+  }
+
   public Class<?> getType() {
 	return type;
-  };
+  }
 
   public boolean isSynthetic() {
     return true;
-  };
+  }
 
   /**
    * Returns a value of the public static final field.
@@ -83,6 +83,6 @@ public class LocalField implements Member {
     if (Debug.enabled)
       Debug.check(constValue!=null);
     return constValue;
-  };
+  }
 
-};
+}

@@ -98,6 +98,6 @@ public class ClassFileTest extends TestCase {
       new java.io.FileOutputStream("dump.class");
     fos.write(cf.getImage());
     fos.close();
-  };
-  
+  }
+
 }

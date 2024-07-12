@@ -31,12 +31,12 @@ class IntegerStack {
   
   public IntegerStack(int initCapacity) {
     data=new int[initCapacity];
-  };
+  }
 
   public IntegerStack() {
     this(30);
-  };
-  
+  }
+
   public IntegerStack copy() {
     IntegerStack res=new IntegerStack(data.length);
     res.count=count;
@@ -45,24 +45,24 @@ class IntegerStack {
     //    in most cases actually empty stacks are cloned in JEL
     //    System.arraycopy(data,0,res.data,0,count);
     return res;
-  };
+  }
 
   public final void push(int what) {
     if (count>=data.length) incCap(count+1);
     data[count++]=what;
-  };
-  
+  }
+
   public final int peek() {
     return data[count-1];
-  };
+  }
 
   public final int pop() {
     return data[--count];
-  };
+  }
 
   public final int size() {
     return count;
-  };
+  }
 
   // Swaps values above given limits in two stacks
   public static void swap(IntegerStack one,int oneLim,
@@ -111,7 +111,7 @@ class IntegerStack {
 //      };
 // ----- end of faster version of the same
 
-  };
+  }
 
   private void incCap(int minCapacity) {
     int[] old_data=data;
@@ -120,6 +120,6 @@ class IntegerStack {
     if (newSize<minCapacity) newSize=minCapacity;
     data=new int[newSize];
     System.arraycopy(old_data,0,data,0,count);
-  };
+  }
 
-};
+}

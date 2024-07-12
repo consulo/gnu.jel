@@ -25,14 +25,14 @@ public class DoubleObject implements gnu.jel.reflect.Double {
   
   public DoubleObject(double val) {
 	this.val=val;
-  };
-  
+  }
+
   public double getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

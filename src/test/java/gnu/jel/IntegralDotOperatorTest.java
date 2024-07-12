@@ -130,4 +130,4 @@ public class IntegralDotOperatorTest extends TestingUtils {
                    new Double(3.0), null, rtp, lib,null);
   }
   
-};
+}

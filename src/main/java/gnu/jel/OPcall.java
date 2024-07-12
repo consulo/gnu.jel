@@ -103,8 +103,8 @@ public class OPcall extends OP {
         paramOPs.push(new OPunary(paramOPs,typeID(cReq),cReq,i<0));
 
       chi[i-thisIdx]=paramOPs.pop();
-    };
-    
+    }
+
     // push & store the result type
     resType=Library.getType(m);
     resID=typeID(resType);
@@ -117,7 +117,7 @@ public class OPcall extends OP {
                 ((m.getModifiers() & 0x0008)!=0) && // if static
                 ((resID<=7) || (resID==11)) //  if can store result
                 );
-  };
+  }
 
   /**
    * Prepares access to the local variable (formal parameter) of method.
@@ -129,7 +129,7 @@ public class OPcall extends OP {
     this.nplv=lvarn;
     resID=typeID(type);
     resType=type;
-  };
+  }
 
   /**
    * Attempts to evaluate this function.
@@ -150,9 +150,9 @@ public class OPcall extends OP {
       } catch (Exception exc) {
         exception=exc;
         evaltd[i]=false;
-      };
-    };
-    
+      }
+    }
+
     Object res=null;
     
     if (exception==null) { // try to evaluate the method
@@ -184,19 +184,19 @@ public class OPcall extends OP {
         else throw new Exception();       
       } catch (Exception exc) {
         exception=exc;
-      };
-    };
-    
+      }
+    }
+
     if (exception!=null) {
       // didn't eval, replace at least evaluated children
       for(int i=0;i<chi.length;i++)
         if (evaltd[i])
           chi[i]=new OPload(chi[i],params[i]);
       throw exception;
-    };
-    
+    }
+
     return res;
-  };
+  }
 
   protected final static byte[] arrayTypeCodes;
   protected final static int[] arrayStoreCodes;
@@ -236,7 +236,7 @@ public class OPcall extends OP {
       else {
         cf.code(((0x15+lvt)<<8)+0xc4);
         cf.writeShort(lvarn_translated);
-      };
+      }
     } else {
       cf.code(0xFB); // labels block;
 
@@ -285,8 +285,8 @@ public class OPcall extends OP {
         cf.noteStk(8,-1);              // array ref (in case of varargs) comes out
 
       cf.codeM(m); // call the method / get field
-    };
+    }
     cf.noteStk(-1,resID);              // result of the call comes in
-  };
-  
-};
+  }
+
+}

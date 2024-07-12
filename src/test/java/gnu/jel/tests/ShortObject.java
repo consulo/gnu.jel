@@ -25,14 +25,14 @@ public class ShortObject implements gnu.jel.reflect.Short {
   
   public ShortObject(short val) {
 	this.val=val;
-  };
-  
+  }
+
   public short getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

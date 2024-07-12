@@ -25,14 +25,14 @@ public class CharacterObject implements gnu.jel.reflect.Character {
   
   public CharacterObject(char val) {
 	this.val=val;
-  };
-  
+  }
+
   public char getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

@@ -45,7 +45,7 @@ public class OPload extends OP {
     this.resType=specialTypes[resID];
     
     this.what=what;
-  };
+  }
 
   /**
    * Creates an OP, loading a constant to be put instead of another OP.
@@ -73,7 +73,7 @@ public class OPload extends OP {
         Debug.println("instead.resID="+instead.resID);
         Debug.println("what="+what);
         Debug.println("what.getClass()="+what.getClass());
-      };
+      }
 
       Debug.check((
                     (typeIDObject(what)==instead.resID) && 
@@ -84,19 +84,19 @@ public class OPload extends OP {
                     (what instanceof StringBuffer)
                     )
                    );
-    };
+    }
 
     this.resType=instead.resType;
     this.resID=instead.resID;
     this.what=what;
-  };
+  }
 
   public Object eval() throws Exception {
     return what;
-  };  
+  }
 
   public void compile(ClassFile cf) {
     cf.codeLDC(what,resID);
-  };
+  }
 
-};
+}

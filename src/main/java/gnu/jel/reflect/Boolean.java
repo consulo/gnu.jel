@@ -26,4 +26,4 @@ package gnu.jel.reflect;
  */
 public interface Boolean {
     public boolean getValue();
-};
+}

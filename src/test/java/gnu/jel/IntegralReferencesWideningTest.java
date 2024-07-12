@@ -115,4 +115,4 @@ public class IntegralReferencesWideningTest extends TestingUtils {
   }
 
 
-};
+}

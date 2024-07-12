@@ -30,9 +30,9 @@ public class DVResolverProvider extends gnu.jel.DVMap {
     // adds a new property
     protected void addProperty(String name,Object value) {
 	properties.put(name,value);
-    };
+    }
 
-    // implements the method of DVResolver interface,
+  // implements the method of DVResolver interface,
     // used by the compiler to query about available dynamic
     // variables
     public String getTypeName(String name) {
@@ -42,17 +42,17 @@ public class DVResolverProvider extends gnu.jel.DVMap {
 	if (val instanceof String) return "String";
 	// the type is not supported we say the variable is not defined
 	return null;
-    };
-    
-    // Next we have those YYY getXXXProperty(String) methods described in
+    }
+
+  // Next we have those YYY getXXXProperty(String) methods described in
     // the manual
 
     public Data getDataProperty(String name) {
 	return (Data)properties.get(name);
-    };
+    }
 
-    public String getStringProperty(String name) {
+  public String getStringProperty(String name) {
 	return (String)properties.get(name);
-    };
+    }
 
-};
+}

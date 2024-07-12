@@ -74,11 +74,11 @@ public class TableKeeper {
       if (Debug.enabled) {
 		Debug.println("Exception when reading tables:");
 		Debug.reportThrowable(exc);
-      };
-    };
+      }
+  }
     tables=temp;
     msgs=resB;
-  };
+  }
 
   /**
    * Used to get a reference to the named int[][] table.
@@ -86,11 +86,11 @@ public class TableKeeper {
    */
   public static Object getTable(String name) {
     return tables.get(name);
-  };
+  }
 
   public static String getMsg(int code,Object[] params) {
     return java.text.MessageFormat.format(msgs.getString("e"+code),params);
-  };
+  }
 
 }
 

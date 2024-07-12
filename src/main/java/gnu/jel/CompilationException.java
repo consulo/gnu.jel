@@ -59,7 +59,7 @@ import java.text.MessageFormat;
    */
   public int getColumn() {
     return col;
-  };
+  }
 
   /**
    * Used to obtain the error code.
@@ -68,7 +68,7 @@ import java.text.MessageFormat;
    */
   public int getType() {
     return code;
-  };
+  }
 
   /**
    * Used to obtain the parameters for this error.
@@ -77,7 +77,7 @@ import java.text.MessageFormat;
    */
   public Object[] getParameters() {
     return params;
-  };
+  }
 
   /**
    * Used to obtain the formatted error message.
@@ -87,8 +87,8 @@ import java.text.MessageFormat;
     if (Debug.enabled)
       Debug.check(col>=0);
     return TableKeeper.getMsg(code,params);
-  };
+  }
 
-};
+}
 
 

@@ -29,5 +29,5 @@ public class GlobalContext {
 	this.x=x;
 	this.d1=d1;
 	this.d2=d2;
-    };
-};
+    }
+}

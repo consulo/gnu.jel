@@ -167,9 +167,9 @@ public abstract class CompiledExpression {
       if (Debug.enabled)
 	Debug.check(false,"WrongTypeReturned from "+
 		     "CompiledExpression.getType().");
-    };
+    }
     return res;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>boolean</TT>.
@@ -188,7 +188,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return false;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>byte</TT>.
@@ -207,7 +207,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>short</TT>.
@@ -226,7 +226,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>char</TT>.
@@ -245,7 +245,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return '?';
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>int</TT>.
@@ -264,7 +264,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>long</TT>.
@@ -283,7 +283,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0L;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>float</TT>.
@@ -302,7 +302,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0.0F;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>double</TT>.
@@ -321,7 +321,7 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
 		    " check value of getType().");
     return 0.0D;
-  };
+  }
 
   /**
    * Evaluates the expression whose result has type <TT>void</TT>.
@@ -339,9 +339,8 @@ public abstract class CompiledExpression {
       Debug.println("Wrong evaluateXXXX() method called,"+
                     " check value of getType().");
     return;
-  };
+  }
 
-  
 
   // String and object comparisons
   private static java.text.Collator collator=null;
@@ -350,9 +349,9 @@ public abstract class CompiledExpression {
     if (collator==null) 
       collator = java.text.Collator.getInstance();
     return collator.compare(s1,s2);
-  };
+  }
 
-};
+}
 
 
 

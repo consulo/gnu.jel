@@ -33,14 +33,14 @@ public abstract class TestingUtils extends TestCase {
                                  int errcol, PrintStream o) throws Exception {
     if (o!=null) {
       o.print("*** : \""); o.print(expr); o.println('"');
-    };
-    
+    }
+
     CompilationException ce=null;
     try {
       OP op=Evaluator.parse(expr,lib,fixType);
     } catch (CompilationException e) {
       ce=e;
-    };
+    }
     assertTrue("No error detected, but should be",ce!=null);
     
     int column=ce.getColumn(); // Column, where error was found    
@@ -50,12 +50,12 @@ public abstract class TestingUtils extends TestCase {
       for(int i=0;i<column-1;i++) o.print(' ');
       o.println('^');
       o.print("MESSAGE: "); o.println(ce.getMessage());
-    };
-    
+    }
+
     assertEquals("Error column does not match expected", 
                  errcol, ce.getColumn());
-  };
-    
+  }
+
   // Tests evaluation of logical expressions
   // The input is an expression of the form "a&b|c&d"
   // where there are n<=32 free parameters _a,_b,_c,_d (starting from a_ in 
@@ -75,8 +75,8 @@ public abstract class TestingUtils extends TestCase {
     if (o!=null) {
       o.print("*** : FULL LOGIC TEST \""); o.print(expr); 
       o.println("\" . ( "+cases+" cases ).");    
-    };
-    
+    }
+
     boolean vars[]=new boolean[bits];
     boolean testOK=true;
     for (int ccase=0;((ccase<cases)&&testOK);ccase++) {
@@ -89,7 +89,7 @@ public abstract class TestingUtils extends TestCase {
           int varnum=currchar-'a';
           if (vars[varnum]) cexpr.append("true "); else  cexpr.append("false");
         } else cexpr.append(currchar);
-      };
+      }
 
       // Now we need to calculate cexpr
       
@@ -108,10 +108,10 @@ public abstract class TestingUtils extends TestCase {
           o.println('^');
           o.println("Unexpected syntax error on supposingly correct"+
                     " expression.");
-        };
+        }
         throw ce;
-      };
-      
+      }
+
       // Make optimization iterations
       Object result=null;      
 
@@ -128,16 +128,16 @@ public abstract class TestingUtils extends TestCase {
           // Some JITs compile methods if they are run more than once
           for(int acounter=0;acounter<20;acounter++) {
             result1=expr_c.evaluate(null);
-          };
+          }
         } catch (Throwable e) {
           if (o!=null) {
             o.println(cexpr.toString());
             o.println("Exception emerged during compilation/evaluation.");
             o.print("      ");e.printStackTrace();
-          };
+          }
           throw e;
-        };
-	
+        }
+
         if (result!=null)
           assertEquals("Interpretation and compilation give different reults",
                        result,result1);
@@ -147,17 +147,17 @@ public abstract class TestingUtils extends TestCase {
           try {
             op=new OPload(op,op.eval());
           } catch (Exception exc) {
-          };
-      };
-      
+          }
+      }
+
       if (showcases && (o!=null)) {
         o.print(cexpr.toString()); 
         o.print(" == "); 
         o.println(result.toString());
-      };
-    };
+      }
+    }
     assertTrue(true);
-  };
+  }
 
   protected static void simExpression(String expr, Object tobe, Class<?> fixType,
                                       Object[] runtimeParameters,
@@ -167,7 +167,7 @@ public abstract class TestingUtils extends TestCase {
     if (tobe==java.lang.Void.TYPE) {
       tobe=null;
       voideval=true;
-    };
+    }
 
     if (o!=null) {
       o.print("*** : \""); o.print(expr);
@@ -195,10 +195,10 @@ public abstract class TestingUtils extends TestCase {
         o.println('^');
         o.println("Unexpected syntax error on supposingly correct "+
                   "expression.");
-      };
+      }
       throw ce;
-    };
-    
+    }
+
     // uncomment to temporary perform the constants folding at the very beginning for a test
     //try {
     //  op=new OPload(op,op.eval());
@@ -210,8 +210,8 @@ public abstract class TestingUtils extends TestCase {
         String message=""+iteration+" |"+toStr(op);
         o.print(message);
         for (int k=message.length();k<59;k++) o.print(' ');
-      };
-      
+      }
+
       Object result=null;
       Class<?> compile_type=null;
       try {
@@ -225,37 +225,37 @@ public abstract class TestingUtils extends TestCase {
         // Some JITs compile methods if they are run more than once
         for(int acounter=0;acounter<20;acounter++) {
           result=expr_c.evaluate(runtimeParameters);
-        };
+        }
       } catch (Throwable e) {
         if ((tobe==null) && !voideval) {
           if (o!=null) {
             o.println("EXPECTED EXCEPTION.");
             o.print("      ");o.println(e.getMessage());
-          };
+          }
         } else {
           o.println("Exception emerged during compilation/evaluation.");
           o.print("      ");e.printStackTrace();
           throw e; // rethrow to signal error
-        };
-      };
-      
+        }
+      }
+
       if (tobe!=null) {
         assertNotNull("NO RESULT", result);
         if (o!=null) {
           o.print(" ="); o.print(result);
-        };
+        }
         assertEquals(tobe, result);
         if (!compile_type.isInstance(result)) {
           if (o!=null) {
             o.println("");
             o.println("WRONG COMPILE-TYPE !!!");
-          };
+          }
           assertTrue("Wrong type of function result.", false);
         } else {
           if (o!=null)
             o.print("[!ETM got=\""+result.getClass()+"\" expected=\""+
                     compile_type+"\"]");
-        };
+        }
         if (o!=null) o.println("");
       } else {
         if (voideval)
@@ -268,38 +268,38 @@ public abstract class TestingUtils extends TestCase {
             o.println(" ="+result.toString());
           else
             o.println("NO RESULT");
-        };
-      };
-      
+        }
+      }
+
       if (iteration==0) 
         try {
           op=new OPload(op,op.eval());
         } catch (Exception exc) {
-        };
-    };
-  };
-  
+        }
+    }
+  }
+
 
   public static String toStr(OP o) {
     if (o instanceof OPload) {
       OPload op=(OPload)o;
       if (op.resID==8) return "\""+op.what+"\"";
       return op.what.toString()+(op.resID>9?'L':"ZBCSIJFDLV".charAt(op.resID));
-    };
+    }
     if (o instanceof OPbinary) {
       String[] opSymbols={
         "+","-","*","/","%","&","|","^","==","!=","<",">=",
         ">","<=","<<",">>",">>>","&&","||","{}",".+."};
       OPbinary op=(OPbinary)o;
       return toStr(op.chi[0])+opSymbols[op.code]+toStr(op.chi[1]);
-    };
+    }
     if (o instanceof OPunary) {
       String[] opSymbols={"--","~","!","<RET>","(Z)","(B)",
                           "(C)","(S)","(I)","(J)",
                           "(F)","(D)","(L)","(POP)","->TSB","->STR"};
       OPunary op=(OPunary)o;
       return opSymbols[op.code]+toStr(op.chi[0]);      
-    };
+    }
     if (o instanceof OPcall) {
       OPcall op=(OPcall)o;
       if (op.m==null)
@@ -310,11 +310,11 @@ public abstract class TestingUtils extends TestCase {
         for (int i=0;i<op.chi.length;i++) {
           if (i>0) res.append(",");
           res.append(toStr(op.chi[i]));
-        };
+        }
         res.append(')');
         return res.toString();
       }
-    };
+    }
     if (o instanceof OPcondtnl) {
       OPcondtnl op=(OPcondtnl)o;
       StringBuffer res=new StringBuffer();
@@ -331,9 +331,9 @@ public abstract class TestingUtils extends TestCase {
         res.append(')');
       }
       return res.toString();
-    };
+    }
     return "<<<<<OP TYPE NOT IDENTIFIED>>>>";
-  };
+  }
 
 
   // Tests a given binary operation on all primitive types
@@ -371,7 +371,7 @@ public abstract class TestingUtils extends TestCase {
         resID=paramOPs.peek().resID;
         npbcActual++;
       } catch (CompilationException exc) {
-      };
+      }
       Object res=null;
       if (resID>=0) { // result exists test it
         // construct the resulting object
@@ -402,8 +402,8 @@ public abstract class TestingUtils extends TestCase {
           break;
         default:
           assertTrue("The result of unary operation is not primitive", false);
-        };
-      };
+        }
+      }
 
       for(int k=0;k<prefixes.length;k++) {
         for(int m=k;m<prefixes.length;m++) {
@@ -413,17 +413,17 @@ public abstract class TestingUtils extends TestCase {
             simExpression(expr,res,null,context,lib,o);
           else
             simError(expr,null,lib,1,o);   
-        };
-      };
-        
-    };
-    
+        }
+      }
+
+    }
+
     if (o!=null) o.print("*=*=*= : the total number of successful operations "+
                          npbcActual);
     assertEquals(npbc,npbcActual);
-  };
-  
-  
+  }
+
+
   // Tests a given binary operation on all primitive types
   protected static void testBinaryPrimitive(int code,int npbc,
                                           Library lib, Object[] context,
@@ -463,7 +463,7 @@ public abstract class TestingUtils extends TestCase {
           resID=paramOPs.peek().resID;
           npbcActual++;
         } catch (CompilationException exc) {
-        };
+        }
         Object res=null;
         if (resID>=0) { // result exists test it
           // construct the resulting object
@@ -494,9 +494,9 @@ public abstract class TestingUtils extends TestCase {
             break;
           default:
           assertTrue("The result of binary operation is not primitive", false);
-          };
-        };
-        
+          }
+        }
+
         for(int k=0;k<prefixes.length;k++) {
           for(int m=k;m<prefixes.length;m++) {
             String op1=prefixes[k]+typeNames[i]+suffixes[k];
@@ -506,14 +506,14 @@ public abstract class TestingUtils extends TestCase {
               simExpression(expr,res,null,context,lib,o);
             else
               simError(expr,null,lib,op1.length()+1,o);
-          };
-        };
-        
-      };
+          }
+        }
 
-    
+      }
+
+
     if (o!=null) o.print("*=*=*= : the total number of successful operations "+
                          npbcActual);
     assertEquals(npbc,npbcActual);
-  };
-};
+  }
+}

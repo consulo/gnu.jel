@@ -55,8 +55,8 @@ public final class Debug {
     if (enabled) {
       System.err.print("[DEBUG] ");
       System.err.println(message);
-    };
-  };
+    }
+  }
 
   /**
    * Checks for the condition.
@@ -71,8 +71,8 @@ public final class Debug {
       System.err.println(message);
       Throwable tracer=new Throwable(message);
       tracer.printStackTrace();
-    }; 
-  };
+    }
+  }
 
   /**
    * Checks for the condition.
@@ -84,8 +84,8 @@ public final class Debug {
     if (enabled && (!condition)) {
       Throwable tracer=new Throwable("Assertion failed.");
       tracer.printStackTrace();
-    }; 
-  };
+    }
+  }
 
   /**
    * Reports an exception, which should not occur(i.e. handled improperly).
@@ -97,8 +97,8 @@ public final class Debug {
       System.err.println("Unexpected exception has occured :");
       System.err.println(message);
       t.printStackTrace();
-    };
-  };
+    }
+  }
 
   /**
    * Reports an exception, which should not occur(i.e. handled improperly).
@@ -108,7 +108,7 @@ public final class Debug {
     if (enabled) {
       System.err.println("Unexpected exception has occured :");
       t.printStackTrace();
-    };
-  };
-};
+    }
+  }
+}
 

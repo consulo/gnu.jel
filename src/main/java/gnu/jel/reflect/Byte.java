@@ -26,4 +26,4 @@ package gnu.jel.reflect;
  */
 public interface Byte {
     public byte getValue();
-};
+}

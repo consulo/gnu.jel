@@ -25,4 +25,4 @@ package gnu.jel.reflect;
  *  java String type using its <TT>.toString()</TT> method.
  */
 public interface String {
-};
+}

@@ -20,8 +20,6 @@
 
 package gnu.jel;
 
-import gnu.jel.debug.Debug;
-
 /**
  * Represents a method local to the class being compiled.
  */
@@ -54,7 +52,7 @@ public class LocalMethod extends LocalField {
       this.exceptions=exceptions;
     else
       this.exceptions=new Class<?>[0];
-  };
+  }
 
   /**
    * Used to obtain types of formal parameters of this method.
@@ -63,7 +61,7 @@ public class LocalMethod extends LocalField {
    */
   public Class<?>[] getParameterTypes() {
 	return paramTypes;
-  };
+  }
 
   /**
    * Used to get checked exceptions thrown by this method
@@ -71,7 +69,7 @@ public class LocalMethod extends LocalField {
    */
   public Class<?>[] getExceptionTypes() {
     return exceptions;
-  };
+  }
 
-};
+}
 

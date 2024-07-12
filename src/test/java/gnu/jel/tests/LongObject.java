@@ -25,14 +25,14 @@ public class LongObject implements gnu.jel.reflect.Long {
   
   public LongObject(long val) {
 	this.val=val;
-  };
-  
+  }
+
   public long getValue() {
 	return val;
-  };
+  }
 
   public int aMethod() {
     return 1;
-  };
+  }
 
-};
+}

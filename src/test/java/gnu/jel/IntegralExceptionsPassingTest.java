@@ -57,4 +57,4 @@ public class IntegralExceptionsPassingTest extends TestingUtils {
     simExpression("throw_arg_eq_4(6-2)",null,null,rtp,lib,null);
   }
   
-};
+}

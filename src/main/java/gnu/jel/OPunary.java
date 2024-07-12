@@ -67,7 +67,7 @@ public class OPunary extends OP {
 
     if (Debug.enabled)
       Debug.check((opNames.length==una.length));
-  };
+  }
 
   /**
    * Constructs a new unary operation.
@@ -105,19 +105,19 @@ public class OPunary extends OP {
       if (unwrpID!=opID) {
         uwrpCode=((opID-12+11)<<8)+0x00FE;
         uwrpsTo=unwrpID;
-      };
-      
+      }
+
       if ((implCode=una[code][unwrpID])==0xFF) {
         // operation is not defined on types
         Object[] paramsExc={opNames[code],opType};
         throw new CompilationException(28,paramsExc);
-      };
-      
+      }
+
       resID=unary_prmtns[unwrpID];
       resType=specialTypes[resID];
-    };
-    
-  };
+    }
+
+  }
 
   /**
    * Creates conversion operation to the given class.
@@ -138,8 +138,8 @@ public class OPunary extends OP {
       if (targetID==8) {
         Debug.check(typeID(targetClass)==targetID,
                      "The type was improperly identified for OPunary conv.");
-      };
-    };
+      }
+    }
 
     // set the result type
     resID=targetID;
@@ -203,23 +203,23 @@ public class OPunary extends OP {
       if (unwrappedCurrID!=currID) {    // TODO (*) eliminate the duplicate block
         uwrpCode=((currID-12+11)<<8)+0x00FE;
         uwrpsTo=unwrappedCurrID;
-      };
-    };
+      }
+    }
 
     if ((implCode=una[code][unwrappedCurrID])==0xFF) {
       //Debug.println("code="+code);
       // can't convert at all
       Object[] paramsExc={currClass,resType};
       throw new CompilationException(21,paramsExc);
-    };
+    }
 
     if (!(allownarrowing || 
           isWidening(currID,currClass,resID,resType))) {
       // can't do narrowing conversions automatically
       Object[] paramsExc={currClass,resType};
       throw new CompilationException(22,paramsExc);
-    };
-  };
+    }
+  }
 
   public void compile(ClassFile cf) {
     if (code==2) cf.code(0xFB); // equivalent to cf.labels_block();
@@ -230,7 +230,7 @@ public class OPunary extends OP {
       //                      | dup
       //                      | invokespecial StringBuffer()
       cf.noteStk(-1,10); // pushes ref to TSB
-    };
+    }
     int cvtResult=resID;
     if ((code>=4) && (code<=4+7) && (resID>=20) && (resID<=27)) {
       cvtResult=resID-20; // result of the type conversion
@@ -241,7 +241,7 @@ public class OPunary extends OP {
       //                      | dup
       cf.noteStk(-1, 8);
       cf.noteStk(-1, 8); // pushes two refs to the created object
-    };
+    }
 
     chi[0].compile(cf);
     
@@ -273,7 +273,7 @@ public class OPunary extends OP {
       cf.noteStk(resID,-1);
     default: // other ops throw one word replace it by another
       cf.noteStk(uwrpsTo>=0?uwrpsTo:chi[0].resID,cvtResult);
-    };
+    }
 
     if ((code>=4) && (code<=4+7) && (resID>=20) && (resID<=27)) {
       // finish creating of the wrapper object by calling its constructor
@@ -284,7 +284,7 @@ public class OPunary extends OP {
       // one reference to the created wrapper object remains
     }
 
-  };
+  }
 
   public Object eval() throws Exception {
     Object operand=chi[0].eval();
@@ -295,7 +295,7 @@ public class OPunary extends OP {
         (code==12)) { // do not evaluate, just replace operand
       chi[0]=new OPload(chi[0],operand);
       throw new Exception(); // bail out
-    };
+    }
 
     if (code==2) { // logical not
       if (((Boolean)operand).booleanValue())
@@ -317,7 +317,7 @@ public class OPunary extends OP {
       default:
         if (Debug.enabled)
           Debug.check(code>=0,"Wrong unary opcode.");
-      };
+      }
       operand=narrow(val,resID);
     } else {
       // conversion operations
@@ -329,9 +329,9 @@ public class OPunary extends OP {
         if (resID>=20)
           throw new Exception(); // do not evaluate boxing conversions (can't store result)
         operand=narrow(widen(operand,operand_resID),resID);
-      };
-    };
+      }
+    }
     return operand;
-  };
-};
+  }
+}
 

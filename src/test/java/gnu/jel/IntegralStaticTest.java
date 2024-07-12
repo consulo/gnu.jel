@@ -313,7 +313,7 @@ public class IntegralStaticTest extends TestingUtils {
     simExpression("(NaNf<=1)",Boolean.FALSE,null,null,lib,null);
     simExpression("(NaNf==1)",Boolean.FALSE,null,null,lib,null);
     simExpression("!(NaNf!=1)",Boolean.FALSE,null,null,lib,null);
-  };
+  }
 
   public void testNaNCondensed() throws Throwable {
     // In fact, next four tests are equivalent to the above ones,
@@ -333,7 +333,7 @@ public class IntegralStaticTest extends TestingUtils {
     simExpression("(1>NaNf)||(1<NaNf)||(1>=NaNf)||(1<=NaNf)||"+
                    "(1==NaNf)||!(1!=NaNf)",
                    Boolean.FALSE,null,null,lib,null);
-  };
+  }
 
 
   public void testExpr57() throws Throwable {
@@ -395,4 +395,4 @@ public class IntegralStaticTest extends TestingUtils {
   }
 
 
-};
+}

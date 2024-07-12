@@ -76,7 +76,7 @@ public abstract class OP {
   static {
     specialTypes=(Class<?>[])TableKeeper.getTable("specialTypes");
     unwrapType=(byte[]) TableKeeper.getTable("unwrapType");
-  };
+  }
 
   /**
    * Identifies the primitive type of the given class.
@@ -97,7 +97,7 @@ public abstract class OP {
                      "You didn't put _ALL_ primitive types"+
                      " into primitiveTypes array.");
       return i;
-    };
+    }
 
     int i;
     for(i=NUM_SPECIAL_PRIMITIVE_TYPES+1; // TSB is excluded
@@ -106,7 +106,7 @@ public abstract class OP {
     
     if (i<specialTypes.length) return i; 
     return 8; // just a generic reference
-  };
+  }
 
 
   /**
@@ -125,13 +125,13 @@ public abstract class OP {
     if (o instanceof java.lang.Double) return 7;
     if (o instanceof java.lang.String) return 11;
     return 8;
-  };
+  }
 
   // bitmap of allowed widening type conversions. 
   private final static int[] cvt_wide;
   static {
     cvt_wide=(int[])TableKeeper.getTable("cvt_wide");
-  };
+  }
 
   /**
    * Used to find out if the conversion t1->t2 is widening.
@@ -158,7 +158,7 @@ public abstract class OP {
       if (Debug.enabled)
         Debug.check(id1<cvt_wide.length);
       return (cvt_wide[id2] & (0x800 >> id1)) >0;
-    };
+    }
 
     // converting into object
     if (id1>=8) {
@@ -167,11 +167,11 @@ public abstract class OP {
       if (c1==null) return true; // "null" can be widened to any reference
       if (c2==null) return false; // assignment to "null" is narrowing
       return c2.isAssignableFrom(c1); // can assign references
-    };
+    }
 
     // primitive into object is certainly not widening
     return false;
-  };
+  }
 
   /**
    * Used to find out if the conversion t1->t2 is widening.
@@ -182,7 +182,7 @@ public abstract class OP {
    */
   public static boolean isWidening(Class<?> c1, Class<?> c2) {
     return isWidening(typeID(c1),c1,typeID(c2),c2);
-  };
+  }
 
   /**
    * Makes widest possible representation of a value of Java primitive type.
@@ -212,7 +212,7 @@ public abstract class OP {
         Debug.println("Attempt to widen wrong primitive ("+clsID+").");
       return new Long(0L);
     }
-  };
+  }
 
   /**
    * Narrows the value back to desired primitiva type.
@@ -243,5 +243,5 @@ public abstract class OP {
         Debug.println("Attempt to narrow wrong primitive ("+clsID+").");
       return null;
     }
-  };
-};
+  }
+}

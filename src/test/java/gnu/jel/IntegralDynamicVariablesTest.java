@@ -299,6 +299,6 @@ public class IntegralDynamicVariablesTest extends TestingUtils {
     double[] atemp={1.0,2.0};
     vp.addProperty("A",atemp);
     simExpression("A[0]+3.0", new Double(4.0), null, rtp, lib,null);    
-  };
+  }
 
-};
+}
